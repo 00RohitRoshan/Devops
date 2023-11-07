@@ -196,7 +196,8 @@ Describe kubernetes replicaset in between pod and deployment.
 
 deployment->Replicaset->Pod->Container
 
-kubectl aply -f [deployment config file name]
+create deployment
+- kubectl aply -f [deployment config file name]
 
 [7/25] lesson124 Yaml Configfile
 3 Parts of K8s Configuration YAML
@@ -204,7 +205,59 @@ kubectl aply -f [deployment config file name]
 - Specification
 - Status (Automatically generated and added by K8s)
 
+To get more infos about pods
+- Kubectl get pod -o wide
 
+Get deployment config from ETCD
+- Kubectl get deployment [name] -o yaml
+
+delete deployment
+- kubectl delete -f [Configfile]
+
+[8/25] lesson125 Demo project : Complete App Setup with K8s Components
+Wtch it later
+
+[9/25] Lesson126 K8s Namespaces
+- What is K8s Namespace?
+: Organize resources in Namespaces
+: Virtual cluster inside a Cluster
+- What are the use cases?
+- How Namespaces work and how to use it?
+
+- Kubectl get Namespace
+4 Namespace per Default
+- Default
+- kube-node-lease
+- kube-public
+- kube-system
+- kubernetes-dashboard  (only with Minikube)
+
+### default 
+- resources I create are located here (without namespace)
+Create namespace
+- Kubectl create namespace [name]
+Create namespace with a Configuration file.
+
+### Kube-node-lease
+- heartbeats of Nodes
+- each node has associated lease object in Namespace
+- determines the Availability of a node
+
+### kube-public
+- publicly accessible data
+- A Configmap, which contains cluster information
+- ` kubectl cluster-info `
+
+### kube-system
+- Do NOT create or modify in kube-system
+- System processes
+- Master and kubectl processes
+
+1 Divide resources 
+2 Divide teams by Name 
+3 Divide Staging and Development
+4 Divide Blue/Green deployment application common resources
+5 
 
 ------------------------12--------------------------
 [Infrastructure as Code with Terraform]
