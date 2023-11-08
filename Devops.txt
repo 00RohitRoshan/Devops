@@ -253,11 +253,33 @@ Create namespace with a Configuration file.
 - System processes
 - Master and kubectl processes
 
-1 Divide resources 
-2 Divide teams by Name 
-3 Divide Staging and Development
-4 Divide Blue/Green deployment application common resources
-5 
+Divide resources 
+1 Divide teams by Name 
+2 Divide Staging and Development
+3 Divide Blue/Green deployment application common resources
+4 Access and resources limits on Namespaces 
+
+Characteristics of Namespaces
+- You can't access most of the resources from another Namespace
+	- Each NS must define own Configmap/Secret 
+- Access service in another Namespace
+	- DB/elastic Search/Nginx
+- Components, which can't be created within a Namespace
+	- Live globally in a cluster
+	- can't isolate
+	- Volume/node
+	- Kebectl api-resources --namespaced=false
+
+Create component in a Namespace
+- kubectl apply -f [deployment yaml] --namespace=[name]
+
+Change active namespace
+- with kubens
+- kubens [namespace name]
+
+[10/25] Lesson127 Kubernetes Services
+- What is a kubernetes Service and when we need it?
+- Diferent Service types in kubernetes
 
 ------------------------12--------------------------
 [Infrastructure as Code with Terraform]
