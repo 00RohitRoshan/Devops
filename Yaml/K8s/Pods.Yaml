@@ -1,0 +1,27 @@
+# This is a deployment blue print which controlls pods.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app:  nginx # Lebel of the Deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx # Deployment selects the pod
+  template:
+    metadata:
+      labels: # Label of the pod
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.16
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 8080
+

@@ -1,0 +1,18 @@
+apiVersion: v1
+# Specify the resource to create (a Pod)
+kind: Pod
+metadata:
+  # The name of the Pod.
+  name: busybox-pod
+  # The namespace where the resource should be created.
+  namespace: my-namespace
+spec:
+  containers:
+  # The container name
+  - name: busybox
+  # The image to use
+    image: busybox
+    # Make the container sleep for 3600 seconds (one hour) before exiting
+    command:
+      - sleep
+      - "3600"
