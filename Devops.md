@@ -493,6 +493,22 @@ spec: #it will be added under spec
 	- Which database are they using? + 3rd party services
 	- On which port each microservice run? -->
 
+### [23/26] lesson140 Microservices in K8s P2 - Demo project Deploy Microservices Application
+- *Load Generator* Test load of application
+- *emptyDir* for Redis
+```yml
+volumes:
+-	name: redis-data
+	emptyDir: {}
+```
+- ` chmod 600 ~/Downloads/online-shop-kubeconfig.yaml`
+- 600 - read write only by user
+- 400 - read only , only by user
+- ` export KUBECONFIG=~/path-to-K8s-service-provider-config-file `
+- ` kubectl get node `
+- ` kubectl apply -f config.yaml `
+
+
 ------------------------12--------------------------  
 [Infrastructure as Code with Terraform]
 
