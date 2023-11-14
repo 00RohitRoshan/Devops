@@ -443,6 +443,17 @@ spec: #it will be added under spec
 - Secret has to be in same namespace as deployment
 
 ### [19/25] lesson136 K8s Operator
+- Use
+	- Stateful Application
+- What it is ?
+	- Custom Control loop mechanism
+	- Makes use of CRD's (Custom Resource Definitions)
+	- Has domain/app-specific knowledge 
+- Operatorhub.io
+- Operator SDK
+
+### [20/25] lesson137 Operator & Helm Demo
+
 
 ------------------------12--------------------------  
 [Infrastructure as Code with Terraform]
