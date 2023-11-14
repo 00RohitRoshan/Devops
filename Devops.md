@@ -3,10 +3,10 @@
 [Version Control]
 
 -------------------------------7---------------------------
-[Container with Docker]
+## [Container with Docker]
 
 
-[6/17] Lesson74 Main Docker Commands
+### [6/17] Lesson74 Main Docker Commands
 ```
 docker pull <image name>
 docker image
@@ -17,42 +17,42 @@ docker ps -a
 docker start <cid>
 ```
 
-Container Port vs Host Port
-- How two containers listening to same port doesn't have conflict ?
-- Explain Port Binding.  
-` docker run -p<host port>:<container port> -d <image name> `
-- Why we need to run the container in detached mode ?
+- Container Port vs Host Port
+	- How two containers listening to same port doesn't have conflict ?
+	- Explain Port Binding.  
+	` docker run -p<host port>:<container port> -d <image name> `
+	- Why we need to run the container in detached mode ?
 
-[7/17] lesson75 debugging Docker containers
+### [7/17] lesson75 debugging Docker containers
 ```
 docker exec -it <cid> /bin/bash
 docker logs <cid> or docker logs <NAMES>
 docker run --name <custom NAMES> <Image>
 ```
 
-[8/17] Lesson76 Demo project - Demo Overview  
-Workflow with Docker
+### [8/17] Lesson76 Demo project - Demo Overview  
+1. Workflow with Docker
 
-[9/17] Lesson77 Demo project - Developing with Docker  
-Frontend,Backend - Local ; MongoDB,Mongo Express - Container  
-Docker Network  
-Running MongoDB container  
-Environment Variables in MongoDB Container  
-`docker run -p<Host port>:<container port> -d -e MONGO_INITDB_ROOT_USERNAME=<USERNAME> -e MONGO_INITDB_ROOT_PASSWORD=<PASS> --net <docker network> <image>`  
-`docker run -d \`  
-Running Mongo Express container  
-Environment Variables in Mongo Express Container  
+### [9/17] Lesson77 Demo project - Developing with Docker  
+1. Frontend,Backend - Local ; MongoDB,Mongo Express - Container  
+1. Docker Network  
+1. Running MongoDB container  
+1. Environment Variables in MongoDB Container  
+1. `docker run -p<Host port>:<container port> -d -e MONGO_INITDB_ROOT_USERNAME=<USERNAME> -e MONGO_INITDB_ROOT_PASSWORD=<PASS> --net <docker network> <image>`  
+1. `docker run -d \`  
+1. Running Mongo Express container  
+1. Environment Variables in Mongo Express Container  
 ```
 docker logs -f
 docker logs | tail
 ```
 
-[10/17] Demo Project - Running multiple Services with Docker Compose
-Docker Compose yaml for mongodb
-Docker Compose yaml for mongoexpress
-- Docker Compose takes care of creating a common network for MongoDB and Mongo-Express in a single compose file?
-- Will it create a common network for multiple compose files in a single command?
-- For which cases docker compose creates a common network?
+### [10/17] Demo Project - Running multiple Services with Docker Compose
+1. Docker Compose yaml for mongodb
+1. Docker Compose yaml for mongoexpress
+1. Docker Compose takes care of creating a common network for MongoDB and Mongo-Express in a single compose file?
+1. Will it create a common network for multiple compose files in a single command?
+1. For which cases docker compose creates a common network?
 ```
 version: '3'
 services:
@@ -72,138 +72,140 @@ services:
 		- ME_CONFIG_MONGODB_ADMINPASSWORD=password
 		- ME_CONFIG_MONGODB_SERVER=mongodb
 ```
-docker-compose -f <compose file> up
-docker-compose -f <compose file> down
-how to keep the network created by docker-compose on docker-compose down command?
-Other ways around to do so?
+1. `docker-compose -f <compose file> up`
+1. `docker-compose -f <compose file> down`
+1. how to keep the network created by docker-compose on 1. docker-compose down command?
+1. Other ways around to do so?
 
-[11/17] Lesson79 Demo Project - Buildong Image with Dockerfile
-What is a Dockerfile?
-Explain the commands in Dockerfile, FROM, ENV, RUN, COPY, CMD, and others.
-What are the environment variables are available for dockerfile?
-Why is it prefereble not to provide user and password in it ?
-What is the difference in RUN and CMD?
-Most commonly used run commands in dockerfile?
-Comand to build docker image?
-Difference between dockerfile and image?
-How to verify the created container image?
-Commands to delete docker image?
-On pushing a docker image to registry does it pushes all the required files to it?
+### [11/17] Lesson79 Demo Project - Buildong Image with Dockerfile
+1. What is a Dockerfile?
+1. Explain the commands in Dockerfile, FROM, ENV, RUN, COPY, CMD, and others.
+1. What are the environment variables are available for dockerfile?
+1. Why is it prefereble not to provide user and password in it ?
+1. What is the difference in RUN and CMD?
+1. Most commonly used run commands in dockerfile?
+1. Comand to build docker image?
+1. Difference between dockerfile and image?
+1. How to verify the created container image?
+1. Commands to delete docker image?
+1. On pushing a docker image to registry does it pushes all the required files to it?
 
-[12/17] Lesson80 Docker Registry on AWS
-Docker private repository
-Registry options
-build & tag an image
-docker login
-docker push
+### [12/17] Lesson80 Docker Registry on AWS
+1. Docker private repository
+1. Registry options
+1. build & tag an image
+1. `docker login`
+1. `docker push`
 
-[13/17] Lesson81 Demo Project - Deploy the Application
-Image from a private repository AWS ECR
-Deploy multiple containers
-Deployment Server
+### [13/17] Lesson81 Demo Project - Deploy the Application
+1. Image from a private repository AWS ECR
+1. Deploy multiple containers
+1. Deployment Server
 
-[14/17] Lesson82 Docker Volumes
-When do we need Docker Volumes?
-What is Docker Volumes
-3 Volume Types
-why prefer named volumes over any type of volumes in production in docker ?
+### [14/17] Lesson82 Docker Volumes
+1. When do we need Docker Volumes?
+1. What is Docker Volumes
+1. 3 Volume Types
+1. why prefer named volumes over any type of volumes in production in docker ?
 
-[15/17] Lesson83 Demo project - Docker Volumes
-Implement Docker Volumes in docker-compose file for mongoDB.
+### [15/17] Lesson83 Demo project - Docker Volumes
+- Implement Docker Volumes in docker-compose file for mongoDB.
 
-[16/17] Lesson84 Push/Pull Nexus Repository
+### [16/17] Lesson84 Push/Pull Nexus Repository
 
-[17/17] Lesson84 Run Nexus as Docker Container
-why ?
+### [17/17] Lesson84 Run Nexus as Docker Container
+- why ?
 
 
-[Advanced]
-Docker Swarm vs kubernetes
-Docker service
-Overlay networks
-Load Balancing in Docker
-Docker secrets
-How do I pass arguments to a container at runtime?
-Why do I need to pass arguments to a container at runtime?
+### [Advanced]
+1. Docker Swarm vs kubernetes
+1. Docker service
+1. Overlay networks
+1. Load Balancing in Docker
+1. Docker secrets
+1. How do I pass arguments to a container at runtime?
+1. Why do I need to pass arguments to a container at runtime?
+
+
 
 ------------------------8---------------------------
-[Build Automation - CICD with Jenkins]
+## [Build Automation - CICD with Jenkins]
 
-[1/18] Overview
+### [1/18] Overview
 
-[2/18] 
+### [2/18] 
 
 ------------------------9---------------------------
-[AWS Services]
+## [AWS Services]
 
 -----------------------10--------------------------
-[Container Orchestration with Kubernetes]
+## [Container Orchestration with Kubernetes]
 
-[1/26] Lesson118 Overview
-Introduction to K8s
-Main K8s Components
-Minikube & Kubectl - Local Setup
-Main Kubectl commands
-YAML Configuration File
-Organize components - Namespaces
-Configure connectivity - Services
-Make App available from outside - Ingress
-Persist data - Volumes
-ConfigMap & Secrets as Volume Types
-Deploy stateful Apps - StateefulSet
-Package Manager of K8s - Helm
-Extending the K8s API - Operator
-Microservices in Kubernetes
-Production and Security best practices
-Authorization in Kubernetes - Role Based Access Control(RBAC)
+### [1/26] Lesson118 Overview  
+1. Introduction to K8s  
+1. Main K8s Components  
+1. Minikube & Kubectl - Local Setup  
+1. Main Kubectl commands  
+1. YAML Configuration File  
+1. Organize components - Namespaces  
+1. Configure connectivity - Services  
+1. Make App available from outside - Ingress  
+1. Persist data - Volumes  
+1. ConfigMap & Secrets as Volume Types  
+1. Deploy stateful Apps - StateefulSet  
+1. Package Manager of K8s - Helm  
+1. Extending the K8s API - Operator   
+1. Microservices in Kubernetes  
+1. Production and Security best practices  
+1. Authorization in Kubernetes - Role Based Access Control(RBAC)
 
-[2/26] Lesson119 Introduction to K8s
-What features do orchestration tools offer ?
-- High Availability / No Downtime
-- Scalability / High Performance
-- Disaster recovery / Backup and Restor
+### [2/26] Lesson119 Introduction to K8s
+- What features do orchestration tools offer ?
+	- High Availability / No Downtime
+	- Scalability / High Performance
+	- Disaster recovery / Backup and Restor
 
-[3/26] Lesson120 Main k8s Components
-Nodes & Pods
-Services & Ingress
-Configmap & Secret
-Volumes
-Deployment & StatefulSet
+### [3/26] Lesson120 Main k8s Components
+- Nodes & Pods
+- Services & Ingress
+- Configmap & Secret
+- Volumes
+- Deployment & StatefulSet
 
-[4/26] Lesson121 K8s Architecture
-Master - Node
-Node Processes
-Worker machine in K8s cluster
-- Container Runtime
-- Kubelet
-- Kube Proxy
-Master Node in K8s
-- Api Server
-- Scheduler
-- Controller Manager
-- ETCD
+### [4/26] Lesson121 K8s Architecture
+- Master - Node
+- Node Processes
+- Worker machine in K8s cluster
+	- Container Runtime
+	- Kubelet
+	- Kube Proxy
+- Master Node in K8s
+	- Api Server
+	- Scheduler
+	- Controller Manager
+	- ETCD
 
-[5/26] Lesson122 Minikube & Kubectl - Local Setup
-Minikube - 1 node K8s Cluster
+### [5/26] Lesson122 Minikube & Kubectl - Local Setup
+Minikube - 1 node K8s Cluster   
 Kubectl  - Command line tool for k8s cluster
 
-[6/26] Lesson123 K8s CLI-Main Kubectl Commands
-CRUD commands :
-kubectl create / edit / delete deployment [name]
-Status of different K8s components :
-kubectl get node/pod/services/replicaset/deployment
-Debugging pods :
-kubectl logs [name]
-kubectl exec -it [name] --bin/bash
+### [6/26] Lesson123 K8s CLI-Main Kubectl Commands
+- CRUD commands :
+	- `kubectl create / edit / delete deployment [name]`
+- Status of different K8s components :
+	- `kubectl get node/pod/services/replicaset/deployment`
+- Debugging pods :
+	- `kubectl logs [name]`
+	- `kubectl exec -it [name] --bin/bash`
 
-kubectl create deployment NAME --image=image [--dry-run] [options]
+`kubectl create deployment NAME --image=image [--dry-run] [options]`
 
 Describe kubernetes replicaset in between pod and deployment.
 
-deployment->Replicaset->Pod->Container
+`deployment`->`Replicaset`->`Pod`->`Container`
 
-create deployment
-- kubectl aply -f [deployment config file name]
+- create deployment
+	- kubectl aply -f [deployment config file name]
 
 ### [7/26] lesson124 Yaml Configfile
 3 Parts of K8s Configuration YAML
@@ -528,7 +530,8 @@ volumes:
 	- No Root Access for containers
 	- Update K8s to the latest version
 
-### [25/26] 
+### [25/26] lesson142 Microservices in K8s P4 - Demo project Create Helm Chart for Microservices
+- 
 
 
 ------------------------12--------------------------  
