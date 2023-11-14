@@ -508,6 +508,28 @@ volumes:
 - ` kubectl get node `
 - ` kubectl apply -f config.yaml `
 
+### [24/26] lesson141 Microservices in K8s P3 -Production & Security Best Practices
+- Best Practices
+	1. Pinned (Tag) Version for Container Image
+	2. Liveness Probe for each container
+	3. Readiness Probe for each container
+		- Exec Probe
+		- TCP Probe
+		- HTTP Probe
+	4. Resource request for each container
+	5. Resource limits for each container
+	6. Don't expose a Node Port Use Ingress/LoadBalancer type
+	7. More than 1 replica for Deployment
+	8. More than 1 worker node in the cluster
+	9. Using Labels
+	10. Using namespaces
+- Security Best Practices
+	- Ensure Images are free of vulnerabilities
+	- No Root Access for containers
+	- Update K8s to the latest version
+
+### [25/26] 
+
 
 ------------------------12--------------------------  
 [Infrastructure as Code with Terraform]
