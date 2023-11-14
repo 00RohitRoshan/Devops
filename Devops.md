@@ -467,6 +467,22 @@ spec: #it will be added under spec
 	- Hula 😃 Everything will be created
 - Access Grafana
 
+### [21/25] lesson138 Secure your Cluster - Authorization with RBAC
+- How Authentication & Authorization works in K8s
+- How to configure users, groups & their permissions
+- Autorization with RBAC (Role Based Access Control)
+- Which K8s resources to use to define permissions in the cluster
+- Components
+	- Role
+	- RoleBinding
+	- ClusterRole
+	- ServiceAccount
+- Creating and Viewing RBAC Resources
+- ` kubectl auth can-i create deployments --namespace dev `
+- Authentication vs Authorization in K8s
+
+###
+
 ------------------------12--------------------------  
 [Infrastructure as Code with Terraform]
 
