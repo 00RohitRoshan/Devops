@@ -139,7 +139,7 @@ Why do I need to pass arguments to a container at runtime?
 -----------------------10--------------------------
 [Container Orchestration with Kubernetes]
 
-[1/25] Lesson118 Overview
+[1/26] Lesson118 Overview
 Introduction to K8s
 Main K8s Components
 Minikube & Kubectl - Local Setup
@@ -157,20 +157,20 @@ Microservices in Kubernetes
 Production and Security best practices
 Authorization in Kubernetes - Role Based Access Control(RBAC)
 
-[2/25] Lesson119 Introduction to K8s
+[2/26] Lesson119 Introduction to K8s
 What features do orchestration tools offer ?
 - High Availability / No Downtime
 - Scalability / High Performance
 - Disaster recovery / Backup and Restor
 
-[3/25] Lesson120 Main k8s Components
+[3/26] Lesson120 Main k8s Components
 Nodes & Pods
 Services & Ingress
 Configmap & Secret
 Volumes
 Deployment & StatefulSet
 
-[4/25] Lesson121 K8s Architecture
+[4/26] Lesson121 K8s Architecture
 Master - Node
 Node Processes
 Worker machine in K8s cluster
@@ -183,11 +183,11 @@ Master Node in K8s
 - Controller Manager
 - ETCD
 
-[5/25] Lesson122 Minikube & Kubectl - Local Setup
+[5/26] Lesson122 Minikube & Kubectl - Local Setup
 Minikube - 1 node K8s Cluster
 Kubectl  - Command line tool for k8s cluster
 
-[6/25] Lesson123 K8s CLI-Main Kubectl Commands
+[6/26] Lesson123 K8s CLI-Main Kubectl Commands
 CRUD commands :
 kubectl create / edit / delete deployment [name]
 Status of different K8s components :
@@ -205,7 +205,7 @@ deployment->Replicaset->Pod->Container
 create deployment
 - kubectl aply -f [deployment config file name]
 
-### [7/25] lesson124 Yaml Configfile
+### [7/26] lesson124 Yaml Configfile
 3 Parts of K8s Configuration YAML
 - Matadata
 - Specification
@@ -220,10 +220,10 @@ Get deployment config from ETCD
 delete deployment
 - kubectl delete -f [Configfile]
 
-### [8/25] lesson125 Demo project : Complete App Setup with K8s Components
+### [8/26] lesson125 Demo project : Complete App Setup with K8s Components
 Wtch it later
 
-### [9/25] Lesson126 K8s Namespaces
+### [9/26] Lesson126 K8s Namespaces
 - What is K8s Namespace?  
 : Organize resources in Namespaces  
 : Virtual cluster inside a Cluster
@@ -287,7 +287,7 @@ Change active namespace
 - with kubens [kubectlx]
 - ` kubens [namespace name] `
 
-### [10/25] Lesson127 Kubernetes Services
+### [10/26] Lesson127 Kubernetes Services
 - What is a kubernetes Service and when we need it?
 	- Each Pod has its own IP address
 		- Pods are ephemeral - are destroyed frequently!
@@ -311,7 +311,7 @@ Change active namespace
 		- Extension of NodePort
 - Differences between them and when to use which one 
 
-### [11/25] Lesson128 Ingress- Connecting to Applications outside   
+### [11/26] Lesson128 Ingress- Connecting to Applications outside   
 - External Service vs Ingress 
 - How to Configure ingress in your Cluster?
 	- Ingress Controller Pod
@@ -341,7 +341,7 @@ Change active namespace
 - Configuring TLS Certificate - https://
 	
 
-### [12/25] lesson129 Persisting Data with Volumes
+### [12/26] lesson129 Persisting Data with Volumes
 - Persistant Volume
 - Persistant Volume Claim
 - Storage Class
@@ -363,13 +363,13 @@ Change active namespace
 	- Provisions Persistent volumes dynamically.
 	- Initiated by PVC
 
-### [13/25] lesson130 ConfigMap & Secret Volume Types
+### [13/26] lesson130 ConfigMap & Secret Volume Types
 - How to create ConfigMap & secret as K8s Volumes ?
 - When to use ConfigMap & Secret Volumes ?
 - ConfigMap & secret for mounting files
 - ConfigMap & Secret are Local Volume Types
 
-### [14/25] lesson131 Statefulset
+### [14/26] lesson131 Statefulset
 - Statefull applications get deployed using StatefulSet not Deployment
 - Deployment vs StatefulSet
 	- StatefulSet provides Pod Identity, Created from *Same spesification*, but *not interchengeable* ! Persistent identifier across any re-scheduling. Fixed order name (identifier). Fixed individual DNS name.
@@ -377,10 +377,10 @@ Change active namespace
 	- Scaling database applications
 		- Master-Slave , data synchronisation
 
-### [15/25] lesson132 Managed K8s Services
+### [15/26] lesson132 Managed K8s Services
 - Managed vs Unmanaged K8s Services
 
-### [16/25] lesson133 Helm Package Manager
+### [16/26] lesson133 Helm Package Manager
 - What is helm ?
 	- K8s Package manager
 	- Templating Engine
@@ -392,7 +392,7 @@ Change active namespace
 - Tiller
 	- Too much power in K8s Cluster so removed in V3
 
-### [17/25] lesson134 Helm & K8s Demo
+### [17/26] lesson134 Helm & K8s Demo
 - Browser -> ngnix-Ingress -> mongo-express -> mongodb-pod -> pv
 - Set as environment variables
 	- ` export KUBECONFIG=test-kubeconfig.yaml `
@@ -416,7 +416,7 @@ Change active namespace
 - Uninstall charts
 	- ` helm uninstall mongodb `
 
-### [18/25] lesson135 Deploy App from Private Docker Registry
+### [18/26] lesson135 Deploy App from Private Docker Registry
 - `Commit`->`Triggers CI build`->`Jenkins packages application`->`pushed to registry`->`private registry`
 - Steps to pull image from private registry
 	- Create Secret component
@@ -442,7 +442,7 @@ spec: #it will be added under spec
 ```
 - Secret has to be in same namespace as deployment
 
-### [19/25] lesson136 K8s Operator
+### [19/26] lesson136 K8s Operator
 - Use
 	- Stateful Application
 - What it is ?
@@ -452,7 +452,7 @@ spec: #it will be added under spec
 - Operatorhub.io
 - Operator SDK
 
-### [20/25] lesson137 Operator & Helm Demo
+### [20/26] lesson137 Operator & Helm Demo
 - Setup Prometheus Monitoring in K8s
 - Prometheus Architecture
 	- *Prometheus Server* processes & stores metrics data
@@ -467,7 +467,7 @@ spec: #it will be added under spec
 	- Hula 😃 Everything will be created
 - Access Grafana
 
-### [21/25] lesson138 Secure your Cluster - Authorization with RBAC
+### [21/26] lesson138 Secure your Cluster - Authorization with RBAC
 - How Authentication & Authorization works in K8s
 - How to configure users, groups & their permissions
 - Autorization with RBAC (Role Based Access Control)
@@ -481,7 +481,17 @@ spec: #it will be added under spec
 - ` kubectl auth can-i create deployments --namespace dev `
 - Authentication vs Authorization in K8s
 
-###
+### [22/26] lesson139 Microservices in K8s P1 - Introduction to Mocroservices
+- Main Benifits of Microservices Applications
+- What you need to know to deploy Microservice Applications in a K8s Cluster
+- Service Mesh Architecture
+	- Isito
+<!-- - Information U need from Developers as Devops Engineer
+	- Which microservices u need to deploy?
+	- Which microservice is talking to which microservice?
+	- How R they communicating?
+	- Which database are they using? + 3rd party services
+	- On which port each microservice run? -->
 
 ------------------------12--------------------------  
 [Infrastructure as Code with Terraform]
