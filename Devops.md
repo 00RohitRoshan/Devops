@@ -453,7 +453,19 @@ spec: #it will be added under spec
 - Operator SDK
 
 ### [20/25] lesson137 Operator & Helm Demo
-
+- Setup Prometheus Monitoring in K8s
+- Prometheus Architecture
+	- *Prometheus Server* processes & stores metrics data
+	- *Alertmanager*: Send alerts
+	- *Prometheus Web UI* visualize the scraped data in UI or Grafana
+- Ways to deploy Prometheus (in increasing eficiency order)
+	- Create and execute the config.yaml file in dpendency order
+	- Deploy them through operator
+	- Use helm chart to deploy operator to deploy prometheus
+- setup with HelmChart
+	- ` helm install prometheus stable/prometheus-operator `
+	- Hula 😃 Everything will be created
+- Access Grafana
 
 ------------------------12--------------------------  
 [Infrastructure as Code with Terraform]
