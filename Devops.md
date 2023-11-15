@@ -1,9 +1,13 @@
 
----------------------------3----------------------------
-[Version Control]
 
--------------------------------7---------------------------
-## [Container with Docker]
+## 2 OS & Linux Basics
+### [Advanced]
+- [CRONjob](https://www.youtube.com/watch?v=aolKiws4Joc)
+	- CRONtab
+
+## 3 Version Control with git
+
+## 7 Container with Docker
 
 
 ### [6/17] Lesson74 Main Docker Commands
@@ -128,7 +132,6 @@ services:
 
 
 
-------------------------8---------------------------
 ## [Build Automation - CICD with Jenkins]
 
 ### [1/18] Overview
@@ -139,7 +142,7 @@ services:
 ## [AWS Services]
 
 -----------------------10--------------------------
-## [Container Orchestration with Kubernetes]
+## 10 Container Orchestration with Kubernetes
 
 ### [1/26] Lesson118 Overview  
 1. Introduction to K8s  
@@ -533,15 +536,19 @@ volumes:
 ### [25/26] lesson142 Microservices in K8s P4 - Demo project Create Helm Chart for Microservices
 - 
 
+### [Advanced]
+- Cronjob
+	- It is Linux Utility 
+- [CRONjob K8s](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
 
-------------------------12--------------------------  
-[Infrastructure as Code with Terraform]
+------------------------12--------------------------
+## [Infrastructure as Code with Terraform]
 
 ------------------------14--------------------------
-[Automation with Python]
+## [Automation with Python]
 
 ------------------------16-------------------------
-[Monitoring with Prometheus]
+## [Monitoring with Prometheus]
 
 
 
