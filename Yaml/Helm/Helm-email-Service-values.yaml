@@ -1,0 +1,17 @@
+# Flat structure is prefered instead of nested
+
+appName: emailservice
+appImage: gcr.io/google-samples/microservices-demo/emailservice
+appVersion: v0.2.3
+appReplicas: 3
+# containerPort: 8080
+containerEnvVars: 
+- name: PORT
+  value: "8080"
+- name: DISABLE_TRACING
+  value: "1"
+- name: DISABLE_PROFILER
+  value: "1"
+
+servicePort: 5000
+# serviceType: ClusterIP

@@ -1,0 +1,14 @@
+releases:
+  - name: rediscart
+    chart: charts/redis
+    values:
+      - values/redis-values.yaml
+
+  - name: emailservice
+    chart: charts/microservice
+    values:
+      - values/email-service-values.yaml
+      - appReplicas: "2"
+    # ...
+  
+ 

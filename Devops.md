@@ -4,9 +4,10 @@
 ### [Advanced]
 - [CRONjob](https://www.youtube.com/watch?v=aolKiws4Joc)
 	- CRONtab
-
+.
 ## 3 Version Control with git
 
+.
 ## 7 Container with Docker
 
 
@@ -129,17 +130,15 @@ services:
 1. Docker secrets
 1. How do I pass arguments to a container at runtime?
 1. Why do I need to pass arguments to a container at runtime?
-
-
-
-## [Build Automation - CICD with Jenkins]
+.
+## 8 Build Automation - CICD with Jenkins
 
 ### [1/18] Overview
 
 ### [2/18] 
 
 ------------------------9---------------------------
-## [AWS Services]
+## 9 AWS Services
 
 -----------------------10--------------------------
 ## 10 Container Orchestration with Kubernetes
@@ -513,7 +512,7 @@ volumes:
 - ` kubectl get node `
 - ` kubectl apply -f config.yaml `
 
-### [24/26] lesson141 Microservices in K8s P3 -Production & Security Best Practices
+### [24/26] lesson141 Microservices in K8s P3 - Production & Security Best Practices
 - Best Practices
 	1. Pinned (Tag) Version for Container Image
 	2. Liveness Probe for each container
@@ -534,21 +533,50 @@ volumes:
 	- Update K8s to the latest version
 
 ### [25/26] lesson142 Microservices in K8s P4 - Demo project Create Helm Chart for Microservices
-- 
+- ` helm create microservices `
+- ` helm template -f [value file] [chart name] `
+- ` helm lint -f [value file] [chart name] `
+- ` helm install --dry-run -f [value file] [release name] [chart name] `
+- ` helm install -f Helm-email-Service-values.yaml [release name] [chart name] `
+- ` helm ls `
+- Create Redis Chart @35
+
+### [26/26] lesson143 Microservices in K8s P5 - Demo project Deploy Microservices with Helmfile
+- create install.sh
+- Helmfile
+	- install helmfile tool
+	- write helmfile
+	- ` helmfile sync `
+	- ` helmfile list `
+	- ` helmfile destroy `
 
 ### [Advanced]
 - Cronjob
 	- It is Linux Utility 
 - [CRONjob K8s](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
+.
+## 11 Kubernetes on AWS - EKS
+### 
 
-------------------------12--------------------------
-## [Infrastructure as Code with Terraform]
+.
+## 12 Infrastructure as Code with Terraform
 
 ------------------------14--------------------------
-## [Automation with Python]
+## 13 Programming with Python
+###
 
-------------------------16-------------------------
-## [Monitoring with Prometheus]
+.
+## 14 Automation with Python
+
+.
+## 15 Configuration Management with Ansible
+###
+
+.
+## 16 Monitoring with Prometheus
+###
+
+.
 
 
 
