@@ -8,6 +8,15 @@
 ## 3 Version Control with git
 
 .
+## 4 Build & Package Manager Tools
+
+.
+## 5 Cloud & Infrastructure as a Service Basics
+
+.
+## 6 Artifact Repository Manager with Nexus
+
+.
 ## 7 Container with Docker
 
 
@@ -556,7 +565,27 @@ volumes:
 - [CRONjob K8s](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
 .
 ## 11 Kubernetes on AWS - EKS
-### 
+### [1/11] lesson144 - Overview
+- 
+### [2/11] lesson145 - Introduction to Container Services on AWS
+
+### [3/11] lesson146 - Create EKS cluster manually (UI) - P1
+
+### [4/11] lesson147 - Create EKS cluster manually (UI) - P2
+
+### [5/11] lesson148 - Create EKS cluster with Fargate
+
+### [6/11] lesson149 - Create EKS cluster with eksctl
+
+### [7/11] lesson150 - Deploy to EKS cluster from Jenkins
+
+### [8/11] lesson151 - Deploy to LKE cluster from Jenkins
+
+### [9/11] lesson152 - Credentials in Jenkins
+
+### [10/11] lesson153 - Complete CI/CD Pipeline - P1
+
+### [11/11] lesson154 - Complete CI/CD Pipeline - P2
 
 .
 ## 12 Infrastructure as Code with Terraform

@@ -1,0 +1,9 @@
+- Why ?
+- How does it work ?
+- Benifits
+    - Central registry
+    - Encription Decreption
+    - Observability
+    - Consul Servers
+    - Data Plane & Control Plane
+    - Multicluster
