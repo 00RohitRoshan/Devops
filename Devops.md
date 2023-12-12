@@ -94,16 +94,78 @@
 	
 .
 ### [5/10] lesson63 Repository types
-
+- Proxy Reposetory
+	- Remote repository 
+	- Link to the remote repository
+	- Additional copy(cache) of original
+	- saves bandwidth and time
+	- single end point for packages
+- Hosted Repository
+	- Company owned artifact repository 
+- Group Repository
+	- single url for all the required packages for a specific application
 .
 ### [6/10] lesson64 Publish Artifact to repository
-
+- Upload .jar file to repository hosted on nexus
+	- Gradle command for pushing to remote repository
+		- `./gradle publish`
+	- Configure both tools to connect to(Nexus Repo URL+Credentials)
+**gradle**
+```gradle
+version '1.0-SNAPSHOT'
+apply plugin: 'maven-publish'
+publishing{
+	publications {
+		maven(MavenPublication){
+			artifact("build/libs/my-app-$version"+".jar"){
+				extention 'jar'
+			}
+		}
+	}
+	repositories {
+		maven{
+			name 'nexus'
+			url "https://[Ur nexus ip]:[Ur nexus port]/repository/maven-snapshots/"
+			credentials{
+				username project.repoUser
+				password project.repoPass
+			}
+		}
+	}
+}
+```
+**gradle.properties**
+```
+repoUser = -----
+repoPass = -----
+```
+	- Create Nexus users to upload files
+		- Users tab
+		- Roles tab
+- Checkout  the *maven* part in video from 16:00
 .
 ### [7/10] lesson65 Nexus REST Api
-
+- query Nexus repository for different information
+	- components
+	- their version
+	- repositories
+	- This info is needed in Ur CI/CD Pipeline programaticaly 
+	- Use tools like curl or wget to execute http request nd acces NEXUS REST endpoint.  Provide user and credential of a nexus user.  Use the nexus user with the required permissions.
+	- ` curl -u nana:Bibilo123 -X GET 'http://167.99.248.163:8081/service/rest/v1/repositories' `
+	- ` curl -u nana:Bibilo123 -X GET 'http://167.99.248.163:8081/service/rest/v1/components/[id]' `
 .
 ### [8/10] lesson66 Blob Store
-
+- On droplet itself or on cloud
+- Blob store type File,S3
+- State Blob store Started,Failed
+- Blob Count - Number of Blobs currently stored
+- Note 
+	- Blob store can't be modified
+	- Blob store used by a repository can't be deleted
+	- How many blob store you create?
+	- With which sizes?
+	- Which ones you'll use for which repos?
+	- You need to know approx: How much space each repo will need
 .
 ### [9/10] lesson67 Component vs Asset
 
