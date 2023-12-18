@@ -168,10 +168,18 @@ repoPass = -----
 	- You need to know approx: How much space each repo will need
 .
 ### [9/10] lesson67 Component vs Asset
-
+- Files are assets
+- Folder tree is Component (Abstract)
 .
 ### [10/10] lesson68 Cleanup policies and scheduled tasks
-
+- Cleanup Policies tab
+- regex Asset name Matcher
+- Attach policies to repository
+- Repositories tab
+- Tasks tab for cleanup policy time
+- Marked for delete (soft delete)
+- Compact delete (permanent delete)
+- Manually execute
 .
 ## 7 Container with Docker
 ### [6/17] Lesson74 Main Docker Commands
@@ -287,28 +295,124 @@ services:
 .
 ## 8 Build Automation - CICD with Jenkins
 ### [1/18] lesson85 Overview
-
+- Introduction to Build Automation
+- Deploy Jenkins on DigitalOcean Server
+- Install & use Build Tools in Jenkins
+- Create Freestyle Job
+- Docker in Jenkins
+- Build scripted Pipeline
+- Jenkinsfile in detail
+- Build Multibranch Pipeline
+- Configure automated versioning
+- Jenkins Shared library
 .
 ### [2/18] lesson86 Introtuction TO build Automation
-
+- Build Automation
+	- Test environment prepared
+	- Docker credentials configured
+	- all the necessary tools installed
+	- Trigger build automatically
+- Jenkins
+	- Software that you install on a dedicated server
+	- has UI for configuration
+	- Install all the tools you need (Docker,Gradle/Maven/npm,etc)
+	- Configure the tasks(run tests, build app, deployment, etc.)
+	- configure the automatic trigger of the workflow
+- What Jenkins can do
+	- Run tests
+	- Build artifacts
+	- Publish artifacts
+	- Deploy artifacts
+	- Send Notifications
+	- ...
 .
 ### [3/18] lesson87 Install Jenkins
-
+1. Install Jenkins directly on OS ❌
+2. Run Jenkins as Docker container ✅
+	- Watch video
+	- `ssh `
+	- `docker install`
+	- `docker run -p 8080:8080 -p`
 .
 ### [4/18] lesson88 Jenkins UI Tour
-
+- 2 roles for jenkins App
+	- Jenkins Administrator
+		- Operations or Devops teams
+		- administers & manages Jenkins
+		- Setup jenkins cluster
+		- install plugins
+		- backup Jenkins data
+	- Jenkins User
+		- Developer or DevOps teams
+		- Creating the actual jobs to run workflows
 .
 ### [5/18] lesson89 Installing Build Tools
-
+- Jenkins Plugins	
+	- UI (global tool configuration)
+- Install Tools directly on server
+	- Enter in remote server and install `OR`
+	- Inside the docker container, when Jenkins runs as container
+	- `docker ps` get Cid
+	- `docker exec -u 0 -it [Cid] bash` enter docker as root user
+	- watch video 
 .
 ### [6/18] lesson90 Jenkins Basics Demo
+- Execute-shell for direct installed tools
+- plugin config for plugin install
+- Configure Git repository (source code management tab)
+	- configure credentials
 
+- watch video for aditional info
 .
 ### [7/18] lesson91 Docker in Jenkins
-
+- Make available DockerRunTime Directory as volume in jenkins container
+``` 
+docker run -p 8080:8080 -p 50000:50000 -d \
+-v jenkins-home:/var/jenkins-home \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v $(which docker):/usr/bin/docker jenkins/jenkins:lts
+```
+- Add permission
+	- ` docker exec -u 0 -it [Cid] bash `
+	- ` chmod 666 /var/run/docker.sock `
+	- ` ls -l /var/run/docker.sock `
+	- ` exit `
+	- ` docker exec -it [cid] bash `
+	- ` docker pull redis `
+	- ` docker build -t nanajanashia/demo-app:1.0 `
+- Push docker image to docker repository
+	- use secret text(s) or file(s) plugin create user name password variable
+	- ` docker login -u $[usernameVariable] -p $[pswdVariable] [Specify if othr than docker hub repository] `
+	- Or ` echo $[pswdVariable] | docker login -u $[usernameVariable] --password-stdin `
+	- ` docker push nanajanashia/demo-app:1.0 `
+	- the container tag must contain the repository info
+- Push docker image to nexus docker repository
+	- ` vim /etc/docker/daemon.json ` on jenkins droplet as root user
+	- add (as we are allowing http request not https)
+	```
+	{
+		"insecure-registries":["ipOfHostedNexus:portForDockerRepo"]
+	}
+	```
+	- `systemctl restart docker`
+	- ` docker ps -a `
+	- ` docker start [Cid] `
+	- ` ls -l /var/run/docker.sock `
+	- ` docker exec -u 0 it [Cid] bash ` enter docker as root user
+	- ` chmod 666 /var/run/docker.sock `
+	- Add credentials
+	- create credential variables
+	```
+	docker build -t [ipOfNexus:portForDocker/name:version]
+	echo $[passVar] | docker login -u $[userVar] --password-stdin [ipOfNexus:portForDocker]
+	docker push [ipOfNexus:portForDocker/name:version]
+	```
 .
 ### [8/18] lesson92 Freestyle to pipeline job
-
+- ❌ Freestyle job with multiple steps
+- ✅ Freestyle job with 1 job/step
+	- Chain multiple freestyle jobs
+- Pipeline
 .
 ### [9/18] lesson93 Introduction to Pipeline Job
 
