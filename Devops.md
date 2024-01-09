@@ -412,10 +412,26 @@ docker run -p 8080:8080 -p 50000:50000 -d \
 - ❌ Freestyle job with multiple steps
 - ✅ Freestyle job with 1 job/step
 	- Chain multiple freestyle jobs
+	- Limitation - no scripting
 - Pipeline
+	- Suitable for CI/CD
+	- Scripting - Pipeline as code
 .
 ### [9/18] lesson93 Introduction to Pipeline Job
-
+- ❌Pipeline script [or] ✅Pipeline script from SCM
+- Groovy sandbox : you can execute a limited no. of Groovy functions, for that you dont need approval from a jenkins admin.
+- Pieline syntax
+	- Scrpted
+		- first syntax
+		- Groovy engine
+		- advanced sripting capabilities, high flexibility
+	- Declarative
+		- easier to get started with but not that powerful
+		- `pipeline` must be top-level
+			- `agent` where to execute
+			- `stages` where the work happens
+				- `stage("build")` stage name ".."
+					- `steps`  9:11
 .
 ### [10/18] lesson94 Create a Full pipeline with jenkinsfile
 
