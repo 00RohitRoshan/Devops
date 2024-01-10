@@ -1,0 +1,28 @@
+# adds the ext-svc.example.com external dependency to Istio’s service registry
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: svc-entry
+spec:
+  hosts: # Used to declare external services
+  - ext-svc.example.com
+  ports:
+  - number: 443
+    name: https
+    protocol: HTTPS
+  location: MESH_EXTERNAL
+  resolution: DNS
+
+# can configure virtual services and destination rules to control traffic to a service entry in a more granular way, in the same way you configure traffic for any other service in the mesh.
+# destination rule adjusts the TCP connection timeout for requests to the ext-svc.example.com
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: ext-res-dr
+spec:
+  host: ext-svc.example.com
+  trafficPolicy:
+    connectionPool:
+      tcp:
+        connectTimeout: 1s
