@@ -43,3 +43,71 @@
 - Retries
 - [Circuit breakers](https://istio.io/latest/docs/tasks/traffic-management/circuit-breaking/)
 - [Fault injection](https://istio.io/latest/docs/tasks/traffic-management/fault-injection/)
+
+### Istio Security (Authentication & Authorization)
+- To defend against man-in-the-middle attacks, they need `traffic encryption`.
+- To provide flexible service access control, they need `mutual TLS` and fine-grained `access policies`.
+- To determine who did what at what time, they need `auditing` tools.     
+
+![Achitecture](https://istio.io/latest/docs/concepts/security/overview.svg)
+
+#### Security components
+- A `Certificate Authority (CA)` for key and certificate management
+- The `configuration API server` distributes to the proxies:
+    - authentication policies
+    - authorization policies
+    - secure naming information
+- `Sidecar and perimeter proxies` work as Policy Enforcement Points (PEPs) to secure communication between clients and servers.
+- A set of `Envoy proxy extensions` to manage telemetry and auditing
+
+![Components](https://istio.io/latest/docs/concepts/security/arch-sec.svg)
+
+#### Istio Identity
+- Workload-to-Workload -  two parties must exchange credentials with their `identity information` for mutual authentication purposes.
+- Client - server’s identity is checked against the `secure naming` 
+- Server - the server can determine what information the client can access based on the `authorization policies`
+
+|Service Provider | Identity |  
+|--|--|  
+| Kubernetes: | Kubernetes service account |
+|GCE:| GCP service account|
+|On-premises (non-Kubernetes):| user account, custom service account, service name, Istio service account, or GCP service account. The custom service account refers to the existing service account just like the identities that the customer’s Identity Directory manages.|
+
+#### Identity and certificate management
+- X.509 certificates
+[flow](https://istio.io/latest/docs/concepts/security/#pki)
+![Identity provissioning flow](https://istio.io/latest/docs/concepts/security/id-prov.svg)
+
+#### Authentication
+- 2 Types
+    - Peer Authentication (Service-to-Service)
+    - Request Authentication (end user)(JWT-JsonWebToken)
+- Mutual TLS authentication (peer-to-peer/service-to-service)
+    - Permissive mode (help you understand how a policy change can affect your security posture before it is enforced.)
+        -  both `plaintext` traffic and `mutual TLS` traffic at the same time. 
+    - Secure naming
+- [Authentication architecture](https://istio.io/latest/docs/concepts/security/authn.svg)
+- Authentication policies
+    - Policy storage
+    - Selector field
+    - Peer authentication
+        - Permisive
+        - Strict
+        - Disable
+    - Request authentication
+        - Request authentication policies specify the values needed to validate a JSON Web Token (JWT).
+    - Principals
+- Updating authentication policies
+
+#### Authorization
+- Authorization architecture
+- Implicit enablement
+- Authorization policies
+    - Policy Target
+    - Value matching
+    - Exclusion matching
+    - allow-nothing, deny-all and allow-all policy
+    - Custom conditions
+    - Authenticated and unauthenticated identity
+- Using Istio authorization on plain TCP protocols
+- Dependency on mutual TLS
