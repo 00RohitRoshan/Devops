@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: momgo-express-deployment
+  labels:
+    app: momgo-express-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: momgo-express-deployment
+  template:
+    metadata:
+      labels:
+        app: momgo-express-deployment
+    spec:
+      containers:
+      - name: momgo-express-deployment
+        image: mongo-express
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          # request:
+          #   memory: "64Mi"
+          #   cpu: "250m"
+        ports:
+        - containerPort: 8081
+        env:
+        - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-username
+        - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+          valueFrom:
+            secretKeyRef:  # Here is an intentional error # * spec.template.spec.containers[0].env[1].valueFrom.secretKeyRef.name: Invalid value: "": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')
+              name: mongodb-secret
+              key: mongo-root-password
+        - name: ME_CONFIG_MONGODB_SERVER
+          valueFrom:
+            configMapKeyRef:
+              name: mongo-db-url
+              key: database_url
+
+# kubectl logs [mongo express pod name]
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-express-service
+spec:
+  selector:
+    app: momgo-express-deployment
+  type: LoadBalancer # Make it external service
+  ports:
+  - protocol: TCP
+    port: 8081
+    targetPort: 8081
+    nodePort: 30000 # Port for external service
+
+# minikube service [mongo express service name]

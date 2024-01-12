@@ -563,7 +563,7 @@ Describe kubernetes replicaset in between pod and deployment.
 `deployment`->`Replicaset`->`Pod`->`Container`
 
 - create deployment
-	- kubectl aply -f [deployment config file name]
+	- `kubectl aply -f [deployment config file name]`
 ### [7/26] lesson124 Yaml Configfile
 3 Parts of K8s Configuration YAML
 - Matadata
@@ -571,13 +571,13 @@ Describe kubernetes replicaset in between pod and deployment.
 - Status (Automatically generated and added by K8s)
 
 To get more infos about pods
-- Kubectl get pod -o wide
+- `Kubectl get pod -o wide`
 
 Get deployment config from ETCD
-- Kubectl get deployment [name] -o yaml
+- `Kubectl get deployment [name] -o yaml`
 
 delete deployment
-- kubectl delete -f [Configfile]
+- `kubectl delete -f [Configfile]`
 ### [8/26] lesson125 Demo project : Complete App Setup with K8s Components
 Wtch it later
 ### [9/26] Lesson126 K8s Namespaces
@@ -635,7 +635,7 @@ Characteristics of Namespaces
 	- Live globally in a cluster
 	- can't isolate
 	- Volume/node
-	- ` Kebectl api-resources --namespaced=false `
+	- ` kubectl api-resources --namespaced=false `
 
 Create component in a Namespace
 - ` kubectl apply -f [deployment yaml] --namespace=[name] `
