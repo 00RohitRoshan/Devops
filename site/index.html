@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Devops</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Devops</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#2-os-linux-basics" class="nav-link">2 OS &amp; Linux Basics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#3-version-control-with-git" class="nav-link">3 Version Control with git</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#4-build-package-manager-tools" class="nav-link">4 Build &amp; Package Manager Tools</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#5-cloud-infrastructure-as-a-service-basics" class="nav-link">5 Cloud &amp; Infrastructure as a Service Basics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#6-artifact-repository-manager-with-nexus" class="nav-link">6 Artifact Repository Manager with Nexus</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#7-container-with-docker" class="nav-link">7 Container with Docker</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#8-build-automation-cicd-with-jenkins" class="nav-link">8 Build Automation - CICD with Jenkins</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#9-aws-services" class="nav-link">9 AWS Services</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#10-container-orchestration-with-kubernetes" class="nav-link">10 Container Orchestration with Kubernetes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#11-kubernetes-on-aws-eks" class="nav-link">11 Kubernetes on AWS - EKS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#12-infrastructure-as-code-with-terraform" class="nav-link">12 Infrastructure as Code with Terraform</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#13-programming-with-python" class="nav-link">13 Programming with Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#14-automation-with-python" class="nav-link">14 Automation with Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#15-configuration-management-with-ansible" class="nav-link">15 Configuration Management with Ansible</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#16-monitoring-with-prometheus" class="nav-link">16 Monitoring with Prometheus</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="2-os-linux-basics">2 OS &amp; Linux Basics</h2>
+<h3 id="advanced">[Advanced]</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=aolKiws4Joc">CRONjob</a><ul>
+<li>CRONtab
+.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-version-control-with-git">3 Version Control with git</h2>
+<p>.</p>
+<h2 id="4-build-package-manager-tools">4 Build &amp; Package Manager Tools</h2>
+<p>.</p>
+<h2 id="5-cloud-infrastructure-as-a-service-basics">5 Cloud &amp; Infrastructure as a Service Basics</h2>
+<h3 id="15-lesson54-overview">[1/5] lesson54 Overview</h3>
+<ul>
+<li>Deploy JAR Application to Virtual server on Digital Ocean, Common Concepts &amp; Best Practices</li>
+</ul>
+<h3 id="25-lesson55-intro-to-cloud-iass">[2/5] lesson55 Intro to Cloud &amp; IASS</h3>
+<ul>
+<li>Nexus / Jenkins / Own App on cloud host</li>
+<li>What is Infrastructure as a Service ?</li>
+</ul>
+<h3 id="35-lesson56-setup-server-on-digitalocean">[3/5] lesson56 Setup Server on DigitalOcean</h3>
+<ul>
+<li>SSH key Login</li>
+<li>Nexus java 8</li>
+</ul>
+<h3 id="45-lesson57-deploy-run-application-artifact-on-droplet">[4/5] lesson57 Deploy &amp; Run Application Artifact on Droplet</h3>
+<ul>
+<li>scp - Secure Copy</li>
+<li><code>scp build/libs/java-react-example.jar root@159.89.19.211:/root</code></li>
+<li><code>ps aux | grep java</code></li>
+<li><code>netstat -lpnt</code></li>
+</ul>
+<h3 id="55-lesson58-create-configure-a-linux-user-on-a-cloud-server">[5/5] lesson58 Create &amp; Configure a Linux User on a cloud server</h3>
+<ul>
+<li>Security best practice, <ul>
+<li>U shouldn't execute command or start application as root user.</li>
+<li>Create separete user for every application.</li>
+<li>Give only permission to run the app.</li>
+</ul>
+</li>
+<li><code>adduser [name]</code></li>
+<li>Add user to <strong>Sudo</strong> grp<ul>
+<li><code>usermod -aG [grpname] [username]</code></li>
+</ul>
+</li>
+<li><code>su - [username]</code> Switch between users </li>
+<li><code>exit</code> - to logout</li>
+<li>root and standard user has different ssh key</li>
+<li>Create SSH Key for standard user<ul>
+<li>copy the public SSH key for root user</li>
+<li><code>mkdir .ssh</code> in standard user</li>
+<li><code>sudo vim .ssh/authorized_keys</code></li>
+<li>Paste the public ssh key in <em>authorized_keys</em> file
+.</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-artifact-repository-manager-with-nexus">6 Artifact Repository Manager with Nexus</h2>
+<h3 id="110-lesson59-overview">[1/10] lesson59 Overview</h3>
+<p>.</p>
+<h3 id="210-lesson60-intro-to-artifact-repository-manager">[2/10] lesson60 Intro to Artifact Repository Manager</h3>
+<ul>
+<li>Artifact - Apps built into a single file<ul>
+<li>JAR,WAR,ZIP,TAR</li>
+</ul>
+</li>
+<li>Artifact repository - Storage of those artifacts<ul>
+<li>Artifact repository needs to support this specific format for each artifact type</li>
+</ul>
+</li>
+<li>Artifact Repository Manager - <ul>
+<li>Nexus, JfrogArtifactory </li>
+<li>Stores libraries and Frameworks (public repository manager - MVNrepository,npm)</li>
+</ul>
+</li>
+<li>Nexus<ul>
+<li>Host own repository</li>
+<li>Proxy repository for public libraries</li>
+</ul>
+</li>
+<li>Features of Repository Manager<ul>
+<li>Intigrate with LDAP</li>
+<li>Flexible &amp; poerful REST Api for integration with other tools</li>
+<li>Backup &amp; Restore</li>
+<li>Multi-format support </li>
+<li>metadata tagging </li>
+<li>Cleanup policies</li>
+<li>Search functionality</li>
+<li>user token support for system user authentication
+.</li>
+</ul>
+</li>
+</ul>
+<h3 id="310-lesson61-install-run-nexus-on-cloud-server">[3/10] lesson61 Install &amp; run Nexus on cloud server</h3>
+<ul>
+<li><code>wget [official download link]</code></li>
+<li><code>tar -zxvf latest-unix.tar.gz</code></li>
+<li>2 folders untared<ul>
+<li>nexus - nexus runtime software</li>
+<li>sonatype-work - our configuration for nexus and data<ul>
+<li>subdirectories depending on your nexus configuration</li>
+<li>IP address that accessed Nexus</li>
+<li>Logs of Nexus App</li>
+<li>Your uploaded files and metadata</li>
+<li>can use this folder for backup</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Service should not run with Root user Permission</li>
+<li><code>adduser nexus</code></li>
+<li><code>ls -l</code></li>
+<li><code>chown -R [user]:[grp] [folder name]</code></li>
+<li><code>ls -l</code></li>
+<li><code>vim [nexus foldername]/bin/nexus.rc</code></li>
+<li>edit <code>run_as_user="[username]"</code></li>
+<li><code>su - [username]</code></li>
+<li><code>/opt/nexus-3.28.1-01/bin/nexus start</code></li>
+<li><code>netstat -lnpt</code>
+.</li>
+</ul>
+<h3 id="410-lesson62-introduction-to-nexus">[4/10] lesson62 Introduction to nexus</h3>
+<ul>
+<li>Nexus UI Tour </li>
+</ul>
+<p>.</p>
+<h3 id="510-lesson63-repository-types">[5/10] lesson63 Repository types</h3>
+<ul>
+<li>Proxy Reposetory<ul>
+<li>Remote repository </li>
+<li>Link to the remote repository</li>
+<li>Additional copy(cache) of original</li>
+<li>saves bandwidth and time</li>
+<li>single end point for packages</li>
+</ul>
+</li>
+<li>Hosted Repository<ul>
+<li>Company owned artifact repository </li>
+</ul>
+</li>
+<li>Group Repository<ul>
+<li>single url for all the required packages for a specific application
+.</li>
+</ul>
+</li>
+</ul>
+<h3 id="610-lesson64-publish-artifact-to-repository">[6/10] lesson64 Publish Artifact to repository</h3>
+<ul>
+<li>Upload .jar file to repository hosted on nexus<ul>
+<li>Gradle command for pushing to remote repository<ul>
+<li><code>./gradle publish</code></li>
+</ul>
+</li>
+<li>Configure both tools to connect to(Nexus Repo URL+Credentials)
+<strong>gradle</strong></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-gradle">version '1.0-SNAPSHOT'
+apply plugin: 'maven-publish'
+publishing{
+    publications {
+        maven(MavenPublication){
+            artifact(&quot;build/libs/my-app-$version&quot;+&quot;.jar&quot;){
+                extention 'jar'
+            }
+        }
+    }
+    repositories {
+        maven{
+            name 'nexus'
+            url &quot;https://[Ur nexus ip]:[Ur nexus port]/repository/maven-snapshots/&quot;
+            credentials{
+                username project.repoUser
+                password project.repoPass
+            }
+        }
+    }
+}
+</code></pre>
+<p><strong>gradle.properties</strong></p>
+<pre><code>repoUser = -----
+repoPass = -----
+</code></pre>
+<pre><code>- Create Nexus users to upload files
+    - Users tab
+    - Roles tab
+</code></pre>
+<ul>
+<li>Checkout  the <em>maven</em> part in video from 16:00
+.</li>
+</ul>
+<h3 id="710-lesson65-nexus-rest-api">[7/10] lesson65 Nexus REST Api</h3>
+<ul>
+<li>query Nexus repository for different information<ul>
+<li>components</li>
+<li>their version</li>
+<li>repositories</li>
+<li>This info is needed in Ur CI/CD Pipeline programaticaly </li>
+<li>Use tools like curl or wget to execute http request nd acces NEXUS REST endpoint.  Provide user and credential of a nexus user.  Use the nexus user with the required permissions.</li>
+<li><code>curl -u nana:Bibilo123 -X GET 'http://167.99.248.163:8081/service/rest/v1/repositories'</code></li>
+<li><code>curl -u nana:Bibilo123 -X GET 'http://167.99.248.163:8081/service/rest/v1/components/[id]'</code>
+.</li>
+</ul>
+</li>
+</ul>
+<h3 id="810-lesson66-blob-store">[8/10] lesson66 Blob Store</h3>
+<ul>
+<li>On droplet itself or on cloud</li>
+<li>Blob store type File,S3</li>
+<li>State Blob store Started,Failed</li>
+<li>Blob Count - Number of Blobs currently stored</li>
+<li>Note <ul>
+<li>Blob store can't be modified</li>
+<li>Blob store used by a repository can't be deleted</li>
+<li>How many blob store you create?</li>
+<li>With which sizes?</li>
+<li>Which ones you'll use for which repos?</li>
+<li>You need to know approx: How much space each repo will need
+.</li>
+</ul>
+</li>
+</ul>
+<h3 id="910-lesson67-component-vs-asset">[9/10] lesson67 Component vs Asset</h3>
+<ul>
+<li>Files are assets</li>
+<li>Folder tree is Component (Abstract)
+.</li>
+</ul>
+<h3 id="1010-lesson68-cleanup-policies-and-scheduled-tasks">[10/10] lesson68 Cleanup policies and scheduled tasks</h3>
+<ul>
+<li>Cleanup Policies tab</li>
+<li>regex Asset name Matcher</li>
+<li>Attach policies to repository</li>
+<li>Repositories tab</li>
+<li>Tasks tab for cleanup policy time</li>
+<li>Marked for delete (soft delete)</li>
+<li>Compact delete (permanent delete)</li>
+<li>Manually execute
+.</li>
+</ul>
+<h2 id="7-container-with-docker">7 Container with Docker</h2>
+<h3 id="617-lesson74-main-docker-commands">[6/17] Lesson74 Main Docker Commands</h3>
+<pre><code>docker pull &lt;image name&gt;
+docker image
+docker run &lt;image name&gt;
+docker ps
+docker stop &lt;cid&gt;
+docker ps -a
+docker start &lt;cid&gt;
+</code></pre>
+<ul>
+<li>Container Port vs Host Port<ul>
+<li>How two containers listening to same port doesn't have conflict ?</li>
+<li>Explain Port Binding.<br />
+<code>docker run -p&lt;host port&gt;:&lt;container port&gt; -d &lt;image name&gt;</code></li>
+<li>Why we need to run the container in detached mode ?</li>
+</ul>
+</li>
+</ul>
+<h3 id="717-lesson75-debugging-docker-containers">[7/17] lesson75 debugging Docker containers</h3>
+<pre><code>docker exec -it &lt;cid&gt; /bin/bash
+docker logs &lt;cid&gt; or docker logs &lt;NAMES&gt;
+docker run --name &lt;custom NAMES&gt; &lt;Image&gt;
+</code></pre>
+<h3 id="817-lesson76-demo-project-demo-overview">[8/17] Lesson76 Demo project - Demo Overview</h3>
+<ol>
+<li>Workflow with Docker</li>
+</ol>
+<h3 id="917-lesson77-demo-project-developing-with-docker">[9/17] Lesson77 Demo project - Developing with Docker</h3>
+<ol>
+<li>Frontend,Backend - Local ; MongoDB,Mongo Express - Container  </li>
+<li>Docker Network  </li>
+<li>Running MongoDB container  </li>
+<li>Environment Variables in MongoDB Container  </li>
+<li><code>docker run -p&lt;Host port&gt;:&lt;container port&gt; -d -e MONGO_INITDB_ROOT_USERNAME=&lt;USERNAME&gt; -e MONGO_INITDB_ROOT_PASSWORD=&lt;PASS&gt; --net &lt;docker network&gt; &lt;image&gt;</code>  </li>
+<li><code>docker run -d \</code>  </li>
+<li>Running Mongo Express container  </li>
+<li>Environment Variables in Mongo Express Container  </li>
+</ol>
+<pre><code>docker logs -f
+docker logs | tail
+</code></pre>
+<h3 id="1017-demo-project-running-multiple-services-with-docker-compose">[10/17] Demo Project - Running multiple Services with Docker Compose</h3>
+<ol>
+<li>Docker Compose yaml for mongodb</li>
+<li>Docker Compose yaml for mongoexpress</li>
+<li>Docker Compose takes care of creating a common network for MongoDB and Mongo-Express in a single compose file?</li>
+<li>Will it create a common network for multiple compose files in a single command?</li>
+<li>For which cases docker compose creates a common network?</li>
+</ol>
+<pre><code>version: '3'
+services:
+    mongodb:
+        image: mongo
+        ports:
+        - 27017:27017
+        environment:
+        - MONGO_INITDB_ROOT_USERNAME=admin
+        - MONGO_INITDB_ROOT_PASSWORD=password
+    mongo-express:
+        image: mongo-express
+        ports:
+        - 8080:8081
+        environment:
+        - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+        - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+        - ME_CONFIG_MONGODB_SERVER=mongodb
+</code></pre>
+<ol>
+<li><code>docker-compose -f &lt;compose file&gt; up</code></li>
+<li><code>docker-compose -f &lt;compose file&gt; down</code></li>
+<li>how to keep the network created by docker-compose on 1. docker-compose down command?</li>
+<li>Other ways around to do so?</li>
+</ol>
+<h3 id="1117-lesson79-demo-project-buildong-image-with-dockerfile">[11/17] Lesson79 Demo Project - Buildong Image with Dockerfile</h3>
+<ol>
+<li>What is a Dockerfile?</li>
+<li>Explain the commands in Dockerfile, FROM, ENV, RUN, COPY, CMD, and others.</li>
+<li>What are the environment variables are available for dockerfile?</li>
+<li>Why is it prefereble not to provide user and password in it ?</li>
+<li>What is the difference in RUN and CMD?</li>
+<li>Most commonly used run commands in dockerfile?</li>
+<li>Comand to build docker image?</li>
+<li>Difference between dockerfile and image?</li>
+<li>How to verify the created container image?</li>
+<li>Commands to delete docker image?</li>
+<li>On pushing a docker image to registry does it pushes all the required files to it?</li>
+</ol>
+<h3 id="1217-lesson80-docker-registry-on-aws">[12/17] Lesson80 Docker Registry on AWS</h3>
+<ol>
+<li>Docker private repository</li>
+<li>Registry options</li>
+<li>build &amp; tag an image</li>
+<li><code>docker login</code></li>
+<li><code>docker push</code></li>
+</ol>
+<h3 id="1317-lesson81-demo-project-deploy-the-application">[13/17] Lesson81 Demo Project - Deploy the Application</h3>
+<ol>
+<li>Image from a private repository AWS ECR</li>
+<li>Deploy multiple containers</li>
+<li>Deployment Server</li>
+</ol>
+<h3 id="1417-lesson82-docker-volumes">[14/17] Lesson82 Docker Volumes</h3>
+<ol>
+<li>When do we need Docker Volumes?</li>
+<li>What is Docker Volumes</li>
+<li>3 Volume Types</li>
+<li>why prefer named volumes over any type of volumes in production in docker ?</li>
+</ol>
+<h3 id="1517-lesson83-demo-project-docker-volumes">[15/17] Lesson83 Demo project - Docker Volumes</h3>
+<ul>
+<li>Implement Docker Volumes in docker-compose file for mongoDB.</li>
+</ul>
+<h3 id="1617-lesson84-pushpull-nexus-repository">[16/17] Lesson84 Push/Pull Nexus Repository</h3>
+<p>.</p>
+<h3 id="1717-lesson84-run-nexus-as-docker-container">[17/17] Lesson84 Run Nexus as Docker Container</h3>
+<ul>
+<li>why ?</li>
+</ul>
+<p>.</p>
+<h3 id="advanced_1">[Advanced]</h3>
+<ol>
+<li>Docker Swarm vs kubernetes</li>
+<li>Docker service</li>
+<li>Overlay networks</li>
+<li>Load Balancing in Docker</li>
+<li>Docker secrets</li>
+<li>How do I pass arguments to a container at runtime?</li>
+<li>Why do I need to pass arguments to a container at runtime?
+.</li>
+</ol>
+<h2 id="8-build-automation-cicd-with-jenkins">8 Build Automation - CICD with Jenkins</h2>
+<h3 id="118-lesson85-overview">[1/18] lesson85 Overview</h3>
+<ul>
+<li>Introduction to Build Automation</li>
+<li>Deploy Jenkins on DigitalOcean Server</li>
+<li>Install &amp; use Build Tools in Jenkins</li>
+<li>Create Freestyle Job</li>
+<li>Docker in Jenkins</li>
+<li>Build scripted Pipeline</li>
+<li>Jenkinsfile in detail</li>
+<li>Build Multibranch Pipeline</li>
+<li>Configure automated versioning</li>
+<li>Jenkins Shared library
+.</li>
+</ul>
+<h3 id="218-lesson86-introtuction-to-build-automation">[2/18] lesson86 Introtuction TO build Automation</h3>
+<ul>
+<li>Build Automation<ul>
+<li>Test environment prepared</li>
+<li>Docker credentials configured</li>
+<li>all the necessary tools installed</li>
+<li>Trigger build automatically</li>
+</ul>
+</li>
+<li>Jenkins<ul>
+<li>Software that you install on a dedicated server</li>
+<li>has UI for configuration</li>
+<li>Install all the tools you need (Docker,Gradle/Maven/npm,etc)</li>
+<li>Configure the tasks(run tests, build app, deployment, etc.)</li>
+<li>configure the automatic trigger of the workflow</li>
+</ul>
+</li>
+<li>What Jenkins can do<ul>
+<li>Run tests</li>
+<li>Build artifacts</li>
+<li>Publish artifacts</li>
+<li>Deploy artifacts</li>
+<li>Send Notifications</li>
+<li>...
+.</li>
+</ul>
+</li>
+</ul>
+<h3 id="318-lesson87-install-jenkins">[3/18] lesson87 Install Jenkins</h3>
+<ol>
+<li>Install Jenkins directly on OS ❌</li>
+<li>Run Jenkins as Docker container ✅<ul>
+<li>Watch video</li>
+<li><code>ssh</code></li>
+<li><code>docker install</code></li>
+<li><code>docker run -p 8080:8080 -p</code>
+.</li>
+</ul>
+</li>
+</ol>
+<h3 id="418-lesson88-jenkins-ui-tour">[4/18] lesson88 Jenkins UI Tour</h3>
+<ul>
+<li>2 roles for jenkins App<ul>
+<li>Jenkins Administrator<ul>
+<li>Operations or Devops teams</li>
+<li>administers &amp; manages Jenkins</li>
+<li>Setup jenkins cluster</li>
+<li>install plugins</li>
+<li>backup Jenkins data</li>
+</ul>
+</li>
+<li>Jenkins User<ul>
+<li>Developer or DevOps teams</li>
+<li>Creating the actual jobs to run workflows
+.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="518-lesson89-installing-build-tools">[5/18] lesson89 Installing Build Tools</h3>
+<ul>
+<li>Jenkins Plugins   <ul>
+<li>UI (global tool configuration)</li>
+</ul>
+</li>
+<li>Install Tools directly on server<ul>
+<li>Enter in remote server and install <code>OR</code></li>
+<li>Inside the docker container, when Jenkins runs as container</li>
+<li><code>docker ps</code> get Cid</li>
+<li><code>docker exec -u 0 -it [Cid] bash</code> enter docker as root user</li>
+<li>watch video 
+.</li>
+</ul>
+</li>
+</ul>
+<h3 id="618-lesson90-jenkins-basics-demo">[6/18] lesson90 Jenkins Basics Demo</h3>
+<ul>
+<li>Execute-shell for direct installed tools</li>
+<li>plugin config for plugin install</li>
+<li>
+<p>Configure Git repository (source code management tab)</p>
+<ul>
+<li>configure credentials</li>
+</ul>
+</li>
+<li>
+<p>watch video for aditional info
+.</p>
+</li>
+</ul>
+<h3 id="718-lesson91-docker-in-jenkins">[7/18] lesson91 Docker in Jenkins</h3>
+<ul>
+<li>Make available DockerRunTime Directory as volume in jenkins container</li>
+</ul>
+<pre><code>docker run -p 8080:8080 -p 50000:50000 -d \
+-v jenkins-home:/var/jenkins-home \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v $(which docker):/usr/bin/docker jenkins/jenkins:lts
+</code></pre>
+<ul>
+<li>Add permission<ul>
+<li><code>docker exec -u 0 -it [Cid] bash</code></li>
+<li><code>chmod 666 /var/run/docker.sock</code></li>
+<li><code>ls -l /var/run/docker.sock</code></li>
+<li><code>exit</code></li>
+<li><code>docker exec -it [cid] bash</code></li>
+<li><code>docker pull redis</code></li>
+<li><code>docker build -t nanajanashia/demo-app:1.0</code></li>
+</ul>
+</li>
+<li>Push docker image to docker repository<ul>
+<li>use secret text(s) or file(s) plugin create user name password variable</li>
+<li><code>docker login -u $[usernameVariable] -p $[pswdVariable] [Specify if othr than docker hub repository]</code></li>
+<li>Or <code>echo $[pswdVariable] | docker login -u $[usernameVariable] --password-stdin</code></li>
+<li><code>docker push nanajanashia/demo-app:1.0</code></li>
+<li>the container tag must contain the repository info</li>
+</ul>
+</li>
+<li>Push docker image to nexus docker repository<ul>
+<li><code>vim /etc/docker/daemon.json</code> on jenkins droplet as root user</li>
+<li>add (as we are allowing http request not https)
+<code>{
+    "insecure-registries":["ipOfHostedNexus:portForDockerRepo"]
+}</code></li>
+<li><code>systemctl restart docker</code></li>
+<li><code>docker ps -a</code></li>
+<li><code>docker start [Cid]</code></li>
+<li><code>ls -l /var/run/docker.sock</code></li>
+<li><code>docker exec -u 0 it [Cid] bash</code> enter docker as root user</li>
+<li><code>chmod 666 /var/run/docker.sock</code></li>
+<li>Add credentials</li>
+<li>create credential variables
+<code>docker build -t [ipOfNexus:portForDocker/name:version]
+echo $[passVar] | docker login -u $[userVar] --password-stdin [ipOfNexus:portForDocker]
+docker push [ipOfNexus:portForDocker/name:version]</code>
+.</li>
+</ul>
+</li>
+</ul>
+<h3 id="818-lesson92-freestyle-to-pipeline-job">[8/18] lesson92 Freestyle to pipeline job</h3>
+<ul>
+<li>❌ Freestyle job with multiple steps</li>
+<li>✅ Freestyle job with 1 job/step<ul>
+<li>Chain multiple freestyle jobs</li>
+<li>Limitation - no scripting</li>
+</ul>
+</li>
+<li>Pipeline<ul>
+<li>Suitable for CI/CD</li>
+<li>Scripting - Pipeline as code
+.</li>
+</ul>
+</li>
+</ul>
+<h3 id="918-lesson93-introduction-to-pipeline-job">[9/18] lesson93 Introduction to Pipeline Job</h3>
+<ul>
+<li>❌Pipeline script [or] ✅Pipeline script from SCM</li>
+<li>Groovy sandbox : you can execute a limited no. of Groovy functions, for that you dont need approval from a jenkins admin.</li>
+<li>Pieline syntax<ul>
+<li>Scrpted<ul>
+<li>first syntax</li>
+<li>Groovy engine</li>
+<li>advanced sripting capabilities, high flexibility</li>
+</ul>
+</li>
+<li>Declarative<ul>
+<li>easier to get started with but not that powerful</li>
+<li><code>pipeline</code> must be top-level<ul>
+<li><code>agent</code> where to execute</li>
+<li><code>stages</code> where the work happens<ul>
+<li><code>stage("build")</code> stage name ".."<ul>
+<li><code>steps</code>  9:11
+.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1018-lesson94-create-a-full-pipeline-with-jenkinsfile">[10/18] lesson94 Create a Full pipeline with jenkinsfile</h3>
+<p>.</p>
+<h3 id="1118-lesson95-jenkins-file-syntax">[11/18] lesson95 Jenkins File Syntax</h3>
+<p>.</p>
+<h3 id="1218-lesson96-introduction-to-multibranch-pipeline">[12/18] lesson96 Introduction to multibranch pipeline</h3>
+<p>.</p>
+<h3 id="1318-lesson97-wrapup-jenkins-jobs">[13/18] lesson97 Wrapup- Jenkins Jobs</h3>
+<p>.</p>
+<h3 id="1418-lesson98-credentials-in-jenkins">[14/18] lesson98 Credentials in Jenkins</h3>
+<p>.</p>
+<h3 id="1518-lesson99-jenkins-shared-library">[15/18] lesson99 Jenkins Shared Library</h3>
+<p>.</p>
+<h3 id="1618-lesson100-trigger-jenkins-jobs-webhooks">[16/18] lesson100 Trigger Jenkins Jobs-Webhooks</h3>
+<p>.</p>
+<h3 id="1718-lesson101-versioning-your-application-1">[17/18] lesson101 Versioning your application 1</h3>
+<p>.</p>
+<h3 id="1818-lesson102-versioning-your-application-2">[18/18] lesson102 Versioning Your Application 2</h3>
+<p>.</p>
+<h2 id="9-aws-services">9 AWS Services</h2>
+<h3 id="114-lesson104-overview">[1/14] lesson104 Overview</h3>
+<p>.</p>
+<h3 id="214-lesson105-introduction-to-aws">[2/14] lesson105 Introduction to AWS</h3>
+<p>.</p>
+<h3 id="314-lesson106-create-an-aws-account">[3/14] lesson106 Create an AWS Account</h3>
+<p>.</p>
+<h3 id="414-lesson107-identity-acces-management-iam">[4/14] lesson107 Identity &amp; Acces Management IAM</h3>
+<p>.</p>
+<h3 id="514-lesson108-regions-availability-zones">[5/14] lesson108 REgions &amp; Availability Zones</h3>
+<p>.</p>
+<h3 id="614-lesson109-virtual-private-cloud-vpc">[6/14] lesson109 Virtual Private Cloud VPC</h3>
+<p>.</p>
+<h3 id="714-lesson110-classless-inter-domain-routing-cidr">[7/14] lesson110 Classless Inter Domain Routing (CIDR)</h3>
+<p>.</p>
+<h3 id="814-lesson111-elastic-compute-cloud-ec2">[8/14] lesson111 Elastic Compute Cloud EC2</h3>
+<p>.</p>
+<h3 id="914-lesson112-aws-jenkins-1">[9/14] lesson112 AWS &amp; Jenkins 1</h3>
+<p>.</p>
+<h3 id="1014-lesson113-aws-jenkins-2-docker-compose">[10/14] lesson113 AWS &amp; Jenkins 2 Docker Compose</h3>
+<p>.</p>
+<h3 id="1114-lesson114-aws-jenkins-3-complete-pipeline">[11/14] lesson114 AWS &amp; Jenkins 3 Complete PIpeline</h3>
+<p>.</p>
+<h3 id="1214-lesson115-aws-comandline-interface">[12/14] lesson115 AWS ComandLine Interface</h3>
+<p>.</p>
+<h3 id="1314-lesson116-aws-infrastructure-as-code">[13/14] lesson116 AWS &amp; Infrastructure as Code</h3>
+<p>.</p>
+<h3 id="1414-lesson117-container-services-on-aws">[14/14] lesson117 Container Services on AWS</h3>
+<p>.</p>
+<h2 id="10-container-orchestration-with-kubernetes">10 Container Orchestration with Kubernetes</h2>
+<h3 id="126-lesson118-overview">[1/26] Lesson118 Overview</h3>
+<ol>
+<li>Introduction to K8s  </li>
+<li>Main K8s Components  </li>
+<li>Minikube &amp; Kubectl - Local Setup  </li>
+<li>Main Kubectl commands  </li>
+<li>YAML Configuration File  </li>
+<li>Organize components - Namespaces  </li>
+<li>Configure connectivity - Services  </li>
+<li>Make App available from outside - Ingress  </li>
+<li>Persist data - Volumes  </li>
+<li>ConfigMap &amp; Secrets as Volume Types  </li>
+<li>Deploy stateful Apps - StateefulSet  </li>
+<li>Package Manager of K8s - Helm  </li>
+<li>Extending the K8s API - Operator   </li>
+<li>Microservices in Kubernetes  </li>
+<li>Production and Security best practices  </li>
+<li>Authorization in Kubernetes - Role Based Access Control(RBAC)</li>
+</ol>
+<h3 id="226-lesson119-introduction-to-k8s">[2/26] Lesson119 Introduction to K8s</h3>
+<ul>
+<li>What features do orchestration tools offer ?<ul>
+<li>High Availability / No Downtime</li>
+<li>Scalability / High Performance</li>
+<li>Disaster recovery / Backup and Restor</li>
+</ul>
+</li>
+</ul>
+<h3 id="326-lesson120-main-k8s-components">[3/26] Lesson120 Main k8s Components</h3>
+<ul>
+<li>Nodes &amp; Pods</li>
+<li>Services &amp; Ingress</li>
+<li>Configmap &amp; Secret</li>
+<li>Volumes</li>
+<li>Deployment &amp; StatefulSet</li>
+</ul>
+<h3 id="426-lesson121-k8s-architecture">[4/26] Lesson121 K8s Architecture</h3>
+<ul>
+<li>Master - Node</li>
+<li>Node Processes</li>
+<li>Worker machine in K8s cluster<ul>
+<li>Container Runtime</li>
+<li>Kubelet</li>
+<li>Kube Proxy</li>
+</ul>
+</li>
+<li>Master Node in K8s<ul>
+<li>Api Server</li>
+<li>Scheduler</li>
+<li>Controller Manager</li>
+<li>ETCD</li>
+</ul>
+</li>
+</ul>
+<h3 id="526-lesson122-minikube-kubectl-local-setup">[5/26] Lesson122 Minikube &amp; Kubectl - Local Setup</h3>
+<p>Minikube - 1 node K8s Cluster <br />
+Kubectl  - Command line tool for k8s cluster</p>
+<h3 id="626-lesson123-k8s-cli-main-kubectl-commands">[6/26] Lesson123 K8s CLI-Main Kubectl Commands</h3>
+<ul>
+<li>CRUD commands :<ul>
+<li><code>kubectl create / edit / delete deployment [name]</code></li>
+</ul>
+</li>
+<li>Status of different K8s components :<ul>
+<li><code>kubectl get node/pod/services/replicaset/deployment</code></li>
+</ul>
+</li>
+<li>Debugging pods :<ul>
+<li><code>kubectl logs [name]</code></li>
+<li><code>kubectl exec -it [name] --bin/bash</code></li>
+</ul>
+</li>
+</ul>
+<p><code>kubectl create deployment NAME --image=image [--dry-run] [options]</code></p>
+<p>Describe kubernetes replicaset in between pod and deployment.</p>
+<p><code>deployment</code>-&gt;<code>Replicaset</code>-&gt;<code>Pod</code>-&gt;<code>Container</code></p>
+<ul>
+<li>create deployment<ul>
+<li><code>kubectl aply -f [deployment config file name]</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="726-lesson124-yaml-configfile">[7/26] lesson124 Yaml Configfile</h3>
+<p>3 Parts of K8s Configuration YAML
+- Matadata
+- Specification
+- Status (Automatically generated and added by K8s)</p>
+<p>To get more infos about pods
+- <code>Kubectl get pod -o wide</code></p>
+<p>Get deployment config from ETCD
+- <code>Kubectl get deployment [name] -o yaml</code></p>
+<p>delete deployment
+- <code>kubectl delete -f [Configfile]</code></p>
+<h3 id="826-lesson125-demo-project-complete-app-setup-with-k8s-components">[8/26] lesson125 Demo project : Complete App Setup with K8s Components</h3>
+<p>Wtch it later</p>
+<h3 id="926-lesson126-k8s-namespaces">[9/26] Lesson126 K8s Namespaces</h3>
+<ul>
+<li>What is K8s Namespace?<br />
+: Organize resources in Namespaces<br />
+: Virtual cluster inside a Cluster</li>
+<li>What are the use cases?</li>
+<li>
+<p>How Namespaces work and how to use it?</p>
+</li>
+<li>
+<p>List all namespaces</p>
+<ul>
+<li><code>Kubectl get Namespace</code>  </li>
+</ul>
+</li>
+<li>
+<p>4 Namespace per Default</p>
+<ul>
+<li>Default</li>
+<li>kube-node-lease</li>
+<li>kube-public</li>
+<li>kube-system</li>
+<li>kubernetes-dashboard  (only with Minikube)</li>
+</ul>
+</li>
+<li>
+<p>default </p>
+<ul>
+<li>resources I create are located here (without namespace)   </li>
+</ul>
+<p>Create namespace
+- <code>Kubectl create namespace [name]</code>  </p>
+<p>Create namespace with a Configuration file.</p>
+</li>
+<li>
+<p>Kube-node-lease</p>
+<ul>
+<li>heartbeats of Nodes</li>
+<li>each node has associated lease object in Namespace</li>
+<li>determines the Availability of a node</li>
+</ul>
+</li>
+<li>
+<p>kube-public</p>
+<ul>
+<li>publicly accessible data</li>
+<li>A Configmap, which contains cluster information</li>
+<li><code>kubectl cluster-info</code></li>
+</ul>
+</li>
+<li>
+<p>kube-system</p>
+<ul>
+<li>Do NOT create or modify in kube-system</li>
+<li>System processes</li>
+<li>Master and kubectl processes</li>
+</ul>
+</li>
+<li>
+<p>Divide resources   </p>
+<ul>
+<li>1 Divide teams by Name </li>
+<li>2 Divide Staging and Development</li>
+<li>3 Divide Blue/Green deployment application common resources</li>
+<li>4 Access and resources limits on Namespaces </li>
+</ul>
+</li>
+</ul>
+<p>Characteristics of Namespaces
+- You can't access most of the resources from another Namespace
+    - Each NS must define own Configmap/Secret 
+- Access service in another Namespace
+    - DB/elastic Search/Nginx
+- Components, which can't be created within a Namespace
+    - Live globally in a cluster
+    - can't isolate
+    - Volume/node
+    - <code>kubectl api-resources --namespaced=false</code></p>
+<p>Create component in a Namespace
+- <code>kubectl apply -f [deployment yaml] --namespace=[name]</code></p>
+<p>Change active namespace
+- with kubens [kubectlx]
+- <code>kubens [namespace name]</code></p>
+<h3 id="1026-lesson127-kubernetes-services">[10/26] Lesson127 Kubernetes Services</h3>
+<ul>
+<li>What is a kubernetes Service and when we need it?<ul>
+<li>Each Pod has its own IP address<ul>
+<li>Pods are ephemeral - are destroyed frequently!</li>
+</ul>
+</li>
+<li>Services <ul>
+<li>Has stable IP address</li>
+<li>Loadbalancing</li>
+<li>Good for Loose coupling </li>
+<li>Within &amp; outside cluster</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Diferent Service types in kubernetes<ul>
+<li>ClusterIP Services<ul>
+<li>Default type - takes when not specified</li>
+<li>Multi-Port services
+    <!-- - Service open to two different applications --></li>
+</ul>
+</li>
+<li>Headless Services
+    <!-- - Client wants to communicate  --></li>
+<li>NodePort Services<ul>
+<li>extension of ClusterIP</li>
+<li>30000 - 32767</li>
+<li>Not Secure</li>
+</ul>
+</li>
+<li>LoadBalancer Services<ul>
+<li>Extension of NodePort</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Differences between them and when to use which one </li>
+</ul>
+<h3 id="1126-lesson128-ingress-connecting-to-applications-outside">[11/26] Lesson128 Ingress- Connecting to Applications outside</h3>
+<ul>
+<li>External Service vs Ingress </li>
+<li>How to Configure ingress in your Cluster?<ul>
+<li>Ingress Controller Pod<ul>
+<li>evaluates all the rules</li>
+<li>manages redirections</li>
+<li>entrypoint to the cluster</li>
+<li>many third-party implementation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Configure ingress in minikube</p>
+<ul>
+<li>Ingress controller in minikube<ul>
+<li><code>minikube addons enable ingress</code></li>
+<li><code>kubectl get pod -n kube-system</code></li>
+</ul>
+</li>
+<li>Create Ingress rule<ul>
+<li><code>kubectl apply -f dashboard-ingress.yml</code></li>
+<li><code>kubectl get ingress -n kubernetes-dashboard</code></li>
+<li><code>kubectl get ingress -n kubernetes-dashboard --watch</code></li>
+</ul>
+</li>
+<li>Local Domain to ipadress resolution<ul>
+<li><code>sudo vim /etc/hosts</code></li>
+<li>Put <code>&lt;IpAddress&gt; &lt;URL&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Ingress Default Backend</p>
+<ul>
+<li><code>Kubectl describe ingress [name of ingress] -n [namespace]</code></li>
+<li>Configure the preexisting default backend </li>
+</ul>
+</li>
+<li>
+<p>More Use cases</p>
+<ul>
+<li>Multiple paths for same host</li>
+<li>Multiple Domains/Subdomain</li>
+</ul>
+</li>
+<li>Configuring TLS Certificate - https://</li>
+</ul>
+<h3 id="1226-lesson129-persisting-data-with-volumes">[12/26] lesson129 Persisting Data with Volumes</h3>
+<ul>
+<li>Persistant Volume</li>
+<li>Persistant Volume Claim</li>
+<li>
+<p>Storage Class</p>
+</li>
+<li>
+<p>Need</p>
+<ul>
+<li>Storage that doesn't depend on the pod lifecycle</li>
+<li>Storage must be available on all nodes</li>
+<li>Storage needs to survive even if cluster crashes</li>
+</ul>
+</li>
+<li>
+<p>Persistant Volume YAML Example</p>
+</li>
+<li><strong><em>Persistant volumes</em></strong> are not namespaced. They are available to the whole cluster. <strong><em>Persistance volume claims</em></strong> are namespaced.</li>
+<li>Local vs Remote Volume Types<ul>
+<li>Local volume types violate 2. and 3. requirement for data persistance.</li>
+</ul>
+</li>
+<li>Who creates Persistent Volumes &amp; when ?<ul>
+<li>Persistent volume claim</li>
+</ul>
+</li>
+<li>Level of Volume Abstractions</li>
+<li>ConfigMap &amp; Secret</li>
+<li>Storage Class<ul>
+<li>Provisions Persistent volumes dynamically.</li>
+<li>Initiated by PVC</li>
+</ul>
+</li>
+</ul>
+<h3 id="1326-lesson130-configmap-secret-volume-types">[13/26] lesson130 ConfigMap &amp; Secret Volume Types</h3>
+<ul>
+<li>How to create ConfigMap &amp; secret as K8s Volumes ?</li>
+<li>When to use ConfigMap &amp; Secret Volumes ?</li>
+<li>ConfigMap &amp; secret for mounting files</li>
+<li>ConfigMap &amp; Secret are Local Volume Types</li>
+</ul>
+<h3 id="1426-lesson131-statefulset">[14/26] lesson131 Statefulset</h3>
+<ul>
+<li>Statefull applications get deployed using StatefulSet not Deployment</li>
+<li>Deployment vs StatefulSet<ul>
+<li>StatefulSet provides Pod Identity, Created from <em>Same spesification</em>, but <em>not interchengeable</em> ! Persistent identifier across any re-scheduling. Fixed order name (identifier). Fixed individual DNS name.</li>
+</ul>
+</li>
+<li>Why identity of pod is important ?<ul>
+<li>Scaling database applications<ul>
+<li>Master-Slave , data synchronisation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1526-lesson132-managed-k8s-services">[15/26] lesson132 Managed K8s Services</h3>
+<ul>
+<li>Managed vs Unmanaged K8s Services</li>
+</ul>
+<h3 id="1626-lesson133-helm-package-manager">[16/26] lesson133 Helm Package Manager</h3>
+<ul>
+<li>What is helm ?<ul>
+<li>K8s Package manager</li>
+<li>Templating Engine</li>
+<li>Release Management</li>
+</ul>
+</li>
+<li>Helm Chart Structure</li>
+<li>Values Injection<ul>
+<li><code>helm install --values=my-values.yaml [chartname]</code></li>
+<li><code>helm install --set [parameter]=[value]</code></li>
+</ul>
+</li>
+<li>Tiller<ul>
+<li>Too much power in K8s Cluster so removed in V3</li>
+</ul>
+</li>
+</ul>
+<h3 id="1726-lesson134-helm-k8s-demo">[17/26] lesson134 Helm &amp; K8s Demo</h3>
+<ul>
+<li>Browser -&gt; ngnix-Ingress -&gt; mongo-express -&gt; mongodb-pod -&gt; pv</li>
+<li>Set as environment variables<ul>
+<li><code>export KUBECONFIG=test-kubeconfig.yaml</code></li>
+</ul>
+</li>
+<li>Show remote K8s Cluster<ul>
+<li><code>kubectl get node</code></li>
+</ul>
+</li>
+<li>Create MongoDB pods<ul>
+<li><code>helm repo add bitnami https://charts.bitnami.com/bitnami</code></li>
+<li><code>helm search repo bitnami/mongo</code></li>
+<li><code>helm install [our name] --values [path to file] [chart name]</code></li>
+</ul>
+</li>
+<li>check everything got created<ul>
+<li><code>kubectl get all</code></li>
+</ul>
+</li>
+<li>Deploy MongoExpress<ul>
+<li>Create deployment file for pod &amp; service  &amp; go</li>
+</ul>
+</li>
+<li>Deploy Ingress Controller<ul>
+<li><code>helm repo add stable https://kubernetes-charts.storage.googleapis.com/</code></li>
+<li><code>helm install nginx-ingress stable/nginx-ingress --set controller.publishService.enabled=true</code></li>
+</ul>
+</li>
+<li>create ingress rule<ul>
+<li><code>kubectl apply -f test-ingress.yaml</code></li>
+</ul>
+</li>
+<li>Scaledown <ul>
+<li><code>kubectl scale --replicas=0 statefulset/mongodb</code></li>
+</ul>
+</li>
+<li>Uninstall charts<ul>
+<li><code>helm uninstall mongodb</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="1826-lesson135-deploy-app-from-private-docker-registry">[18/26] lesson135 Deploy App from Private Docker Registry</h3>
+<ul>
+<li><code>Commit</code>-&gt;<code>Triggers CI build</code>-&gt;<code>Jenkins packages application</code>-&gt;<code>pushed to registry</code>-&gt;<code>private registry</code></li>
+<li>
+<p>Steps to pull image from private registry</p>
+<ul>
+<li>Create Secret component<ul>
+<li>Credentials</li>
+</ul>
+</li>
+<li>Configure Deployment/Pod<ul>
+<li><code>imagePullSecrets</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>create <code>config.json</code> file for secret to Docker Login</p>
+</li>
+<li><code>aws ecr get-login</code></li>
+<li><code>docker login -u [....] -p [....] -e [none] [registry URL]</code></li>
+<li><code>cat .docker/config.json</code></li>
+<li><code>minikube ssh</code></li>
+<li><code>scp -i $(minikube ssh-key) docker@(minikube ip): .docker/config.json .docker/config.json</code></li>
+<li><code>cat .docker/config.json | base64</code></li>
+<li><code>kubectl create secret generic my-registry-key --from-file=.dockerconfigjson=.docker/config.json --type=kubernetes.io/dockerconfigjson</code></li>
+<li><code>kubectl get secret</code></li>
+<li><code>kuibectl create secret docker-registry my-registry-key-two --docker-server=[registry URL] --docker-username=[name] --docker-password=[password]</code></li>
+<li>Add the below code to the deployment file for authentication</li>
+</ul>
+<pre><code class="language-yaml">spec: #it will be added under spec
+    imagePullSecrets:
+    -   name: my-registry-key
+</code></pre>
+<ul>
+<li>Secret has to be in same namespace as deployment</li>
+</ul>
+<h3 id="1926-lesson136-k8s-operator">[19/26] lesson136 K8s Operator</h3>
+<ul>
+<li>Use<ul>
+<li>Stateful Application</li>
+</ul>
+</li>
+<li>What it is ?<ul>
+<li>Custom Control loop mechanism</li>
+<li>Makes use of CRD's (Custom Resource Definitions)</li>
+<li>Has domain/app-specific knowledge </li>
+</ul>
+</li>
+<li>Operatorhub.io</li>
+<li>Operator SDK</li>
+</ul>
+<h3 id="2026-lesson137-operator-helm-demo">[20/26] lesson137 Operator &amp; Helm Demo</h3>
+<ul>
+<li>Setup Prometheus Monitoring in K8s</li>
+<li>Prometheus Architecture<ul>
+<li><em>Prometheus Server</em> processes &amp; stores metrics data</li>
+<li><em>Alertmanager</em>: Send alerts</li>
+<li><em>Prometheus Web UI</em> visualize the scraped data in UI or Grafana</li>
+</ul>
+</li>
+<li>Ways to deploy Prometheus (in increasing eficiency order)<ul>
+<li>Create and execute the config.yaml file in dpendency order</li>
+<li>Deploy them through operator</li>
+<li>Use helm chart to deploy operator to deploy prometheus</li>
+</ul>
+</li>
+<li>setup with HelmChart<ul>
+<li><code>helm install prometheus stable/prometheus-operator</code></li>
+<li>Hula 😃 Everything will be created</li>
+</ul>
+</li>
+<li>Access Grafana</li>
+</ul>
+<h3 id="2126-lesson138-secure-your-cluster-authorization-with-rbac">[21/26] lesson138 Secure your Cluster - Authorization with RBAC</h3>
+<ul>
+<li>How Authentication &amp; Authorization works in K8s</li>
+<li>How to configure users, groups &amp; their permissions</li>
+<li>Autorization with RBAC (Role Based Access Control)</li>
+<li>Which K8s resources to use to define permissions in the cluster</li>
+<li>Components<ul>
+<li>Role</li>
+<li>RoleBinding</li>
+<li>ClusterRole</li>
+<li>ServiceAccount</li>
+</ul>
+</li>
+<li>Creating and Viewing RBAC Resources</li>
+<li><code>kubectl auth can-i create deployments --namespace dev</code></li>
+<li>Authentication vs Authorization in K8s</li>
+</ul>
+<h3 id="2226-lesson139-microservices-in-k8s-p1-introduction-to-mocroservices">[22/26] lesson139 Microservices in K8s P1 - Introduction to Mocroservices</h3>
+<ul>
+<li>Main Benifits of Microservices Applications</li>
+<li>What you need to know to deploy Microservice Applications in a K8s Cluster</li>
+<li>Service Mesh Architecture<ul>
+<li>Isito</li>
+</ul>
+</li>
+</ul>
+<!-- - Information U need from Developers as Devops Engineer
+    - Which microservices u need to deploy?
+    - Which microservice is talking to which microservice?
+    - How R they communicating?
+    - Which database are they using? + 3rd party services
+    - On which port each microservice run? -->
+<h3 id="2326-lesson140-microservices-in-k8s-p2-demo-project-deploy-microservices-application">[23/26] lesson140 Microservices in K8s P2 - Demo project Deploy Microservices Application</h3>
+<ul>
+<li><em>Load Generator</em> Test load of application</li>
+<li><em>emptyDir</em> for Redis</li>
+</ul>
+<pre><code class="language-yml">volumes:
+-   name: redis-data
+    emptyDir: {}
+</code></pre>
+<ul>
+<li><code>chmod 600 ~/Downloads/online-shop-kubeconfig.yaml</code></li>
+<li>600 - read write only by user</li>
+<li>400 - read only , only by user</li>
+<li><code>export KUBECONFIG=~/path-to-K8s-service-provider-config-file</code></li>
+<li><code>kubectl get node</code></li>
+<li><code>kubectl apply -f config.yaml</code></li>
+</ul>
+<h3 id="2426-lesson141-microservices-in-k8s-p3-production-security-best-practices">[24/26] lesson141 Microservices in K8s P3 - Production &amp; Security Best Practices</h3>
+<ul>
+<li>Best Practices<ol>
+<li>Pinned (Tag) Version for Container Image</li>
+<li>Liveness Probe for each container</li>
+<li>Readiness Probe for each container<ul>
+<li>Exec Probe</li>
+<li>TCP Probe</li>
+<li>HTTP Probe</li>
+</ul>
+</li>
+<li>Resource request for each container</li>
+<li>Resource limits for each container</li>
+<li>Don't expose a Node Port Use Ingress/LoadBalancer type</li>
+<li>More than 1 replica for Deployment</li>
+<li>More than 1 worker node in the cluster</li>
+<li>Using Labels</li>
+<li>Using namespaces</li>
+</ol>
+</li>
+<li>Security Best Practices<ul>
+<li>Ensure Images are free of vulnerabilities</li>
+<li>No Root Access for containers</li>
+<li>Update K8s to the latest version</li>
+</ul>
+</li>
+</ul>
+<h3 id="2526-lesson142-microservices-in-k8s-p4-demo-project-create-helm-chart-for-microservices">[25/26] lesson142 Microservices in K8s P4 - Demo project Create Helm Chart for Microservices</h3>
+<ul>
+<li><code>helm create microservices</code></li>
+<li><code>helm template -f [value file] [chart name]</code></li>
+<li><code>helm lint -f [value file] [chart name]</code></li>
+<li><code>helm install --dry-run -f [value file] [release name] [chart name]</code></li>
+<li><code>helm install -f Helm-email-Service-values.yaml [release name] [chart name]</code></li>
+<li><code>helm ls</code></li>
+<li>Create Redis Chart @35</li>
+</ul>
+<h3 id="2626-lesson143-microservices-in-k8s-p5-demo-project-deploy-microservices-with-helmfile">[26/26] lesson143 Microservices in K8s P5 - Demo project Deploy Microservices with Helmfile</h3>
+<ul>
+<li>create install.sh</li>
+<li>Helmfile<ul>
+<li>install helmfile tool</li>
+<li>write helmfile</li>
+<li><code>helmfile sync</code></li>
+<li><code>helmfile list</code></li>
+<li><code>helmfile destroy</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="advanced_2">[Advanced]</h3>
+<ul>
+<li>Cronjob<ul>
+<li>It is Linux Utility </li>
+</ul>
+</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/">CRONjob K8s</a>
+.</li>
+</ul>
+<h2 id="11-kubernetes-on-aws-eks">11 Kubernetes on AWS - EKS</h2>
+<h3 id="111-lesson144-overview">[1/11] lesson144 - Overview</h3>
+<ul>
+<li></li>
+</ul>
+<h3 id="211-lesson145-introduction-to-container-services-on-aws">[2/11] lesson145 - Introduction to Container Services on AWS</h3>
+<p>.</p>
+<h3 id="311-lesson146-create-eks-cluster-manually-ui-p1">[3/11] lesson146 - Create EKS cluster manually (UI) - P1</h3>
+<p>.</p>
+<h3 id="411-lesson147-create-eks-cluster-manually-ui-p2">[4/11] lesson147 - Create EKS cluster manually (UI) - P2</h3>
+<p>.</p>
+<h3 id="511-lesson148-create-eks-cluster-with-fargate">[5/11] lesson148 - Create EKS cluster with Fargate</h3>
+<p>.</p>
+<h3 id="611-lesson149-create-eks-cluster-with-eksctl">[6/11] lesson149 - Create EKS cluster with eksctl</h3>
+<p>.</p>
+<h3 id="711-lesson150-deploy-to-eks-cluster-from-jenkins">[7/11] lesson150 - Deploy to EKS cluster from Jenkins</h3>
+<p>.</p>
+<h3 id="811-lesson151-deploy-to-lke-cluster-from-jenkins">[8/11] lesson151 - Deploy to LKE cluster from Jenkins</h3>
+<p>.</p>
+<h3 id="911-lesson152-credentials-in-jenkins">[9/11] lesson152 - Credentials in Jenkins</h3>
+<p>.</p>
+<h3 id="1011-lesson153-complete-cicd-pipeline-p1">[10/11] lesson153 - Complete CI/CD Pipeline - P1</h3>
+<p>.</p>
+<h3 id="1111-lesson154-complete-cicd-pipeline-p2">[11/11] lesson154 - Complete CI/CD Pipeline - P2</h3>
+<p>.</p>
+<h2 id="12-infrastructure-as-code-with-terraform">12 Infrastructure as Code with Terraform</h2>
+<p>------------------------14--------------------------</p>
+<h2 id="13-programming-with-python">13 Programming with Python</h2>
+<h3 id="_1"></h3>
+<p>.</p>
+<h2 id="14-automation-with-python">14 Automation with Python</h2>
+<p>.</p>
+<h2 id="15-configuration-management-with-ansible">15 Configuration Management with Ansible</h2>
+<h3 id="_2"></h3>
+<p>.</p>
+<h2 id="16-monitoring-with-prometheus">16 Monitoring with Prometheus</h2>
+<h3 id="_3"></h3>
+<p>.</p>
+<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
+<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
+<h2 id="commands">Commands</h2>
+<ul>
+<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
+<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs -h</code> - Print help message and exit.</li>
+</ul>
+<h2 id="project-layout">Project layout</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2024-01-17 12:39:33.791452+00:00
+-->
